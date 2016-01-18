@@ -13,6 +13,7 @@ namespace Lab1
 			int taskNum;
 			string str;
 			int x = 0, y = 0;
+			Random rnd = new Random();
 
 			Console.Write("Введите номер задания:\t");
 			str = Console.ReadLine();
@@ -94,9 +95,45 @@ namespace Lab1
 					break;
 				case 9:
 					Console.WriteLine("Задание 9:");
+					int a, b, c;
+					Console.WriteLine("Введите A:\t");
+					str = Console.ReadLine();
+					a = Int32.Parse(str);
+					Console.WriteLine("Введите B:\t");
+					str = Console.ReadLine();
+					b = Int32.Parse(str);
+					Console.WriteLine("Введите C:\t");
+					str = Console.ReadLine();
+					c = Int32.Parse(str);
+					if (a < c)
+					{
+						x = a;
+						a = c;
+						c = x;
+					}
+					Console.WriteLine("Утверждение " + b + " между " + a + " и " + c + (a >= b && b >= c ? " истинно" : " ложно"));
+					break;
+				case 10:
+					Console.WriteLine("Задание 10:");
+					Console.WriteLine("Введите X:\t");
+					str = Console.ReadLine();
+					x = Int32.Parse(str);
+					bool statement = ((x % 2) != 0) && ((x > -1000 && x <= -100) || (x < 1000 && x >= 100));
+					Console.WriteLine(x + " - нечётное трёхзначное. Утверждение " + (statement ? "истинно" : "ложно"));
+					break;
+				case 11:
+					Console.WriteLine("Задание 11:");
+					x = rnd.Next();
+					y = rnd.Next();
+					long z = x + y;
+					Console.WriteLine(x + " + " + y + " == " + z);
 					break;
 				case 12:
 					Console.WriteLine("Задание 12:");
+					long l1 = rnd.Next(255);
+					long l2 = rnd.Next(255);
+					byte b1 = (byte)(l1 * l2);
+					Console.WriteLine("(byte)(" + l1 + " * " + l2 + ") == " + b1);
 					break;
 			}
 			Console.ReadKey();
