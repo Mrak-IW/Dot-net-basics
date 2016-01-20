@@ -4,3 +4,5 @@ Properties/
 *.sln
 *.suo
 *.csproj
+.gitattributes
+*.config
