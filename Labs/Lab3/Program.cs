@@ -210,27 +210,65 @@ namespace Lab2
 				case 10:
 					Console.WriteLine("Задание {0}:", taskNum);
 					{
-						int a, b, sum;
+						int a, b;
 						a = rnd.Next(5);
 						b = rnd.Next(6, 10);
+						Console.WriteLine("A = {0}\tB = {1}", a, b); ;
+						for (int i = a; i <= b; i++)
+						{
+							for (int j = 0; j < i; j++)
+							{
+								Console.Write(i + "\t");
+							}
+							Console.WriteLine();
+						}
 					}
 					break;
 				case 11:
 					Console.WriteLine("Задание {0}:", taskNum);
 					{
-
+						int N = rnd.Next(100);
+						int pow;
+						//for (pow = 1; pow < N; pow *= 3) ;
+						pow = 1;
+						while (pow < N)
+						{
+							pow *= 3;
+						}
+						Console.WriteLine("{0} {1} является степенью тройки", N, (N == pow ? "" : "не"));
 					}
 					break;
 				case 12:
 					Console.WriteLine("Задание {0}:", taskNum);
 					{
-
+						int N = rnd.Next(999999);
+						int count = 0;
+						int sum = 0;
+						Console.WriteLine("Дано число {0}", N);
+						while (N > 0)
+						{
+							count++;
+							sum += N % 10;
+							N /= 10;
+						}
+						Console.WriteLine("Число имеет {0} цифр, сумма которых = {1}",count, sum);
 					}
 					break;
 				case 13:
 					Console.WriteLine("Задание {0}:", taskNum);
 					{
-
+						double length = 10;
+						double p = rnd.NextDouble() * 50;
+						double sumLength = 0;
+						int days = 0;
+						Console.WriteLine("P = {0}", p);
+						while (sumLength < 200)
+						{
+							days++;
+							sumLength += length;
+							length *= 1 + 1 / p;
+						}
+						Console.WriteLine("Через {0} дней, суммарный пробег достиг {1}км\nДневной пробег достиг {2}км", days, sumLength, length);
 					}
 					break;
 			}
