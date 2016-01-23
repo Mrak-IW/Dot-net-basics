@@ -1,8 +1,2 @@
 bin/
 obj/
-Properties/
-*.sln
-*.suo
-*.csproj
-.gitattributes
-*.config
