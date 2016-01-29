@@ -1,0 +1,5 @@
+﻿enum FridgeModes
+{
+ 	off,
+	on
+}
