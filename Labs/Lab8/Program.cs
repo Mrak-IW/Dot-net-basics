@@ -68,7 +68,8 @@ namespace Lab8
 					{
 						Array<int> a = new Array<int>(1, 2, 3, 4);
 						Console.WriteLine(a);
-						Array<string> b = new Array<string>("aa", "bb", "cc", "dd");
+
+						Array<double> b = new Array<double>(1.0, 2.5, 3.6, -4);
 						Console.WriteLine(b);
 					}
 					break;

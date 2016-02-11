@@ -11,7 +11,7 @@ namespace Lab8
 		string[] chemicalComposition;
 		double amount;
 
-		public Liquid(double amount, params string[] otherSubstances)
+		public Liquid(double amount = 0, params string[] otherSubstances)
 		{
 			this.amount = amount;
 			int correction = (otherSubstances.Length == 0 ? 1 : 0);
