@@ -74,6 +74,12 @@ namespace Lab9
 						Console.WriteLine("anon.Unknown.fuck = \t{0}\t({1})", anon.Unknown.fuck, anon.Unknown.fuck.GetType());
 					}
 					break;
+				case 6:
+					Console.WriteLine("Задание {0}:", taskNum);
+					{
+						Menu.Show();
+					}
+					break;
 			}
 		}
 
