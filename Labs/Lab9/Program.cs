@@ -67,10 +67,11 @@ namespace Lab9
 					Console.WriteLine("Задание {0}:", taskNum);
 					{
 						var anon = new { P1 = 2, Name = "имя", Unknown = new { fuck = "you"} };
-						Console.WriteLine(anon);
-						Console.WriteLine(anon.P1);
-						Console.WriteLine(anon.Name);
-						Console.WriteLine(anon.Unknown);
+						Console.WriteLine("anon = \t\t{0}\t({1})", anon, anon.GetType());
+						Console.WriteLine("anon.P1 = \t{0}\t({1})", anon.P1, anon.P1.GetType());
+						Console.WriteLine("anon.Name = \t{0}\t({1})", anon.Name, anon.Name.GetType());
+						Console.WriteLine("anon.Unknown = \t{0}\t({1})", anon.Unknown, anon.Unknown.GetType());
+						Console.WriteLine("anon.Unknown.fuck = \t{0}\t({1})", anon.Unknown.fuck, anon.Unknown.fuck.GetType());
 					}
 					break;
 			}
