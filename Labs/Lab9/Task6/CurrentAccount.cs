@@ -35,7 +35,7 @@ namespace Lab9
 
 		public override string ToString()
 		{
-			return "Текущий счёт:\n\tВладелец:\t"+Owner+"\n\tБаланс:\t"+Balanse;
+			return "Текущий счёт:\n\tВладелец:\t"+Owner+"\n\tБаланс:\t\t"+Balanse;
 		}
 	}
 }
