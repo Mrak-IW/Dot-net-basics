@@ -62,7 +62,6 @@
     <Compile Include="Task1\TvSet.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="Task6\Task6.cd" />
     <None Include="Task1\Task1.cd" />
   </ItemGroup>
