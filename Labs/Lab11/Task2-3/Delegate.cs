@@ -1,0 +1,1 @@
+﻿delegate void Observe(int x, int y);
