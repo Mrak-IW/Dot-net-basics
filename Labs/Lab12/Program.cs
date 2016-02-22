@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Lab11.Task1;
 
-namespace Labs
+namespace Lab12
 {
 	class Program
 	{
@@ -46,6 +47,16 @@ namespace Labs
 						{
 							Console.WriteLine("Gotcha");
 						}
+					}
+					break;
+				case 3:
+					Console.WriteLine("Задание {0}:", taskNum);
+					{
+						TPing ping = new TPing();
+						TPong pong = new TPong();
+						ping.RegisterDelegate(pong.Pong);
+						pong.RegisterDelegate(ping.Ping);
+						ping.Ping();
 					}
 					break;
 			}

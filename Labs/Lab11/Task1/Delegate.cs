@@ -1,1 +1,1 @@
-﻿delegate void PingPong();
+﻿public delegate void PingPong();

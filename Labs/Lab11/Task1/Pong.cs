@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Lab11.Task1
 {
-	class TPong
+	public class TPong
 	{
 		PingPong ping;
 		public void RegisterDelegate(PingPong dlg)
