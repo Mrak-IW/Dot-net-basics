@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="HomeWork2.SmartHouse">
+    <Position X="2.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAQABAAAAAAAAAACAAAAEQAAAgAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartHouse.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HomeWork2.SmartDevice">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgIAAABAEQAAAAAAAAAAEAAAAAAAAAoA=</HashCode>
+      <FileName>SmartDevice.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HomeWork2.SmartLamp">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAHAAAAEAAAAAAAAAAAAAAAAAAgACAAAAIA=</HashCode>
+      <FileName>SmartLamp.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HomeWork2.Dimmer">
+    <Position X="11" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABARAAAAEAAAAAAAAAAkAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Dimmer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="HomeWork2.ISmartDevice">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAgIAAAAAEQAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>ISmartDevice.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IHaveThermostat">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAA=</HashCode>
+      <FileName>IHaveThermostat.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IOpenCloseable">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>IOpenCloseable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IBrightable">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAgACAAAAIA=</HashCode>
+      <FileName>IBrightable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IRepareable">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IRepearable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IHaveClock">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>IHaveClock.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.ISmartHouse">
+    <Position X="4.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAQABAAAAAAAAAACAAAAEQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ISmartHouse.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="HomeWork2.IAdjustable&lt;T&gt;">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAABABAAAAEAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IAdjustable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="HomeWork2.EPowerState">
+    <Position X="7.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>EPowerState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
