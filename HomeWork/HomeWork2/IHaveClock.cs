@@ -7,6 +7,6 @@ namespace HomeWork2
 {
 	public interface IHaveClock
 	{
-		int Time { get; set; }
+		DateTime Time { get; }
 	}
 }

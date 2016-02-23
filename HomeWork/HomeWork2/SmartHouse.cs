@@ -9,6 +9,11 @@ namespace HomeWork2
 	{
 		private List<ISmartDevice> devices;
 
+		public SmartHouse()
+		{
+			devices = new List<ISmartDevice>();
+		}
+
 		public virtual int Count
 		{
 			get
@@ -27,7 +32,11 @@ namespace HomeWork2
 
 		public virtual void AddDevice(ISmartDevice device)
 		{
-			throw new NotImplementedException();
+			if (device != null)
+			{
+				devices.Add(device);
+				device.Parent = this;
+			}
 		}
 
 		public virtual ISmartDevice GetDeviceByID(uint ID)

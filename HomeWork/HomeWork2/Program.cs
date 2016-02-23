@@ -10,6 +10,9 @@ namespace HomeWork2
 	{
 		static void Main(string[] args)
 		{
+			ISmartHouse sh = new SmartHouse();
+			Menu m = new Menu(sh);
+			m.Show();
 		}
 	}
 }

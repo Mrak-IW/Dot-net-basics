@@ -9,12 +9,12 @@ namespace HomeWork2
 	{
 		IAdjustable<int> dimmer;
 
-		public SmartLamp(uint ID, ISmartHouse parent, IAdjustable<int> dimmer) : base(ID, parent)
+		public SmartLamp(uint ID, IAdjustable<int> dimmer) : base(ID)
 		{
 			this.dimmer = dimmer;
 		}
 
-		public SmartLamp(SmartHouse parent, IAdjustable<int> dimmer) : base(parent)
+		public SmartLamp(IAdjustable<int> dimmer) : base()
 		{
 			this.dimmer = dimmer;
 		}
@@ -39,7 +39,7 @@ namespace HomeWork2
 		{
 			get
 			{
-				return dimmer.CurrentLevel;
+				return DeviceState == EPowerState.On ? dimmer.CurrentLevel : 0;
 			}
 
 			set
@@ -60,7 +60,24 @@ namespace HomeWork2
 
 		public override string ToString()
 		{
-			return base.ToString();
+			string progress = new string('*', 10 * Brightness / BrightnessMax);
+			progress = "[" + progress + new string(' ', 10 - progress.Length) + "]";
+
+			string res = "Лампа[" + ID.ToString("D4") + "]:\t";
+			switch (DeviceState)
+			{
+				case EPowerState.On:
+					res = res + "включена " + progress + " " + Brightness + " лм";
+					break;
+				case EPowerState.Off:
+					res = res + "выключена";
+					break;
+				case EPowerState.Broken:
+					res = res + "неисправна";
+					break;
+			}
+
+			return res;
 		}
 	}
 }

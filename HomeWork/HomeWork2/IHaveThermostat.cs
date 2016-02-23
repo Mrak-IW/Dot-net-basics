@@ -9,7 +9,7 @@ namespace HomeWork2
 	{
 		int Temperature { get; set; }
 
-		void IncreaseTemperarure();
-		void DecreaseTemperarure();
+		void IncreaseTemperature();
+		void DecreaseTemperature();
 	}
 }

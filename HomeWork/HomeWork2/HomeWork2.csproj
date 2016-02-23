@@ -53,6 +53,7 @@
     <Compile Include="IOpenCloseable.cs" />
     <Compile Include="IRepearable.cs" />
     <Compile Include="ISmartHouse.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmartDevice.cs" />

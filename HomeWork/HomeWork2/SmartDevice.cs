@@ -10,14 +10,14 @@ namespace HomeWork2
 		private uint id;
 		private EPowerState state;
 		private static uint nextID = 0;
+		private ISmartHouse parent;
 
-		public SmartDevice(ISmartHouse parent)
+		public SmartDevice()
 		{
 			ID = nextID++;
-			Parent = parent;
 		}
 
-		public SmartDevice(uint ID, ISmartHouse parent) :this(parent)
+		public SmartDevice(uint ID) :this()
 		{
 			this.ID = ID;
 		}
@@ -51,12 +51,12 @@ namespace HomeWork2
 		{
 			get
 			{
-				throw new NotImplementedException();
+				return parent;
 			}
 
 			set
 			{
-				throw new NotImplementedException();
+				parent = value;
 			}
 		}
 

@@ -22,13 +22,14 @@ namespace HomeWork2
 			{
 				throw new IndexOutOfRangeException("Попытка создать диммер с некорректными границами диапазона значений ");
 			}
-			if (step < 0 || step > Max - Min)
+			if (step < 0 || step > max - min)
 			{
 				throw new IndexOutOfRangeException("Попытка создать диммер с некорректным шагом");
 			}
 			this.min = min;
 			this.max = max;
 			this.step = step;
+			this.CurrentLevel = this.Max;
 		}
 
 		public virtual int CurrentLevel
@@ -58,6 +59,14 @@ namespace HomeWork2
 			get
 			{
 				return min;
+			}
+		}
+
+		public int Step
+		{
+			get
+			{
+				return step;
 			}
 		}
 

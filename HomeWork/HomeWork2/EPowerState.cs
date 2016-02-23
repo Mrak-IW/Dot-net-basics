@@ -7,8 +7,8 @@ namespace HomeWork2
 {
 	public enum EPowerState
 	{
-		On,
 		Off,
+		On,
 		Broken
 	}
 }
