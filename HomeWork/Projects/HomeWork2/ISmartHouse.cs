@@ -1,16 +1,17 @@
-﻿namespace HomeWork2
+﻿using System.Collections.Generic;
+
+namespace HomeWork2
 {
 	public interface ISmartHouse
 	{
-		ISmartDevice this[int i] { get; }
+		ISmartDevice this[string name] { get; }
+		ISmartDevice this[int index] { get; }
 
 		int Count { get; }
 
-		void AddDevice(ISmartDevice device);
-		ISmartDevice GetDeviceByID(uint ID);
-		void RemoveDevice(ISmartDevice device);
-		void RemoveDevice(uint ID);
-		void TurnDeviceOff(uint ID);
-		void TurnDeviceOn(uint ID);
+		void AddDevice(string name, ISmartDevice device);
+		void RemoveDevice(string name);
+		void TurnDeviceOff(string name);
+		void TurnDeviceOn(string name);
 	}
 }

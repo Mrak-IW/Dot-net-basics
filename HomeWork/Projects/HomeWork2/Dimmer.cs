@@ -12,12 +12,8 @@ namespace HomeWork2
 		private readonly int max;
 		private readonly int step;
 
-		public Dimmer(int min, int max, int step)
+		public Dimmer(int max, int min, int step)
 		{
-			if (min < 0)
-			{
-				throw new IndexOutOfRangeException("Попытка создать диммер с отрицательными значениями яркости в диапазоне");
-			}
 			if (max < min)
 			{
 				throw new IndexOutOfRangeException("Попытка создать диммер с некорректными границами диапазона значений ");

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="HomeWork2.CommandMenu">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAgAAAAIAAAAAAAAAAEAIAAACAAAAAgAAA=</HashCode>
+      <FileName>Menu\CommandMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuAdd">
+    <Position X="0.5" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
+      <FileName>Menu\MenuAdd.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuAddLamp">
+    <Position X="2.5" Y="4.5" Width="1.75" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
+      <Path>
+        <Point X="3.375" Y="3.468" />
+        <Point X="3.375" Y="3.729" />
+        <Point X="3.375" Y="3.729" />
+        <Point X="3.375" Y="4.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAgAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Menu\MenuAddLamp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.Menu">
+    <Position X="2.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAQAAAgEAAEAAAACAAAAAAAAAAAAAACAAAgAAA=</HashCode>
+      <FileName>Menu\Menu.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HomeWork2.MenuRemove">
+    <Position X="4.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu\MenuRemove.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HomeWork2.IMenu">
+    <Position X="4.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Menu\IMenu.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

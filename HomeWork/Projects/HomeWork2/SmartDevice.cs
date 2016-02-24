@@ -7,30 +7,25 @@ namespace HomeWork2
 {
 	public abstract class SmartDevice : ISmartDevice
 	{
-		private uint id;
+		private string name;
 		private EPowerState state;
 		private static uint nextID = 0;
 		private ISmartHouse parent;
 
-		public SmartDevice()
+		public SmartDevice(string name)
 		{
-			ID = nextID++;
+			this.Name = name;
 		}
 
-		public SmartDevice(uint ID) :this()
-		{
-			this.ID = ID;
-		}
-
-		public virtual uint ID
+		public virtual string Name
 		{
 			get
 			{
-				return id;
+				return name;
 			}
 			protected set
 			{
-				id = value;
+				name = value;
 			}
 		}
 

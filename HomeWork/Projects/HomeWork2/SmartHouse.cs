@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,11 +8,11 @@ namespace HomeWork2
 {
 	public class SmartHouse : ISmartHouse
 	{
-		private List<ISmartDevice> devices;
+		private SortedList<string, ISmartDevice> devices;
 
 		public SmartHouse()
 		{
-			devices = new List<ISmartDevice>();
+			devices = new SortedList<string, ISmartDevice>();
 		}
 
 		public virtual int Count
@@ -22,55 +23,51 @@ namespace HomeWork2
 			}
 		}
 
-		public virtual ISmartDevice this[int i]
+		public ISmartDevice this[int index]
 		{
 			get
 			{
-				return devices[i];
+				return devices.Values[index];
 			}
 		}
 
-		public virtual void AddDevice(ISmartDevice device)
+		public virtual ISmartDevice this[string name]
+		{
+			get
+			{
+				if (devices.ContainsKey(name))
+				{
+					return devices[name];
+				}
+				else
+				{
+					return null;
+				}
+			}
+		}
+
+		public virtual void AddDevice(string name, ISmartDevice device)
 		{
 			if (device != null)
 			{
-				devices.Add(device);
+				devices.Add(name, device);
 				device.Parent = this;
 			}
 		}
 
-		public virtual ISmartDevice GetDeviceByID(uint ID)
+		public virtual void RemoveDevice(string name)
 		{
-			ISmartDevice result = null;
-			foreach (ISmartDevice dev in devices)
-			{
-				if (dev.ID == ID)
-				{
-					result = dev;
-					break;
-				}
-			}
-			return result;
+			devices.Remove(name);
 		}
 
-		public virtual void RemoveDevice(ISmartDevice device)
+		public void TurnDeviceOff(string name)
 		{
-			devices.Remove(device);
+			this[name].Off();
 		}
 
-		public virtual void RemoveDevice(uint ID)
+		public void TurnDeviceOn(string name)
 		{
-			RemoveDevice(GetDeviceByID(ID));
-		}
-
-		public void TurnDeviceOff(uint ID)
-		{
-			GetDeviceByID(ID).Off();
-		}
-
-		public void TurnDeviceOn(uint ID)
-		{
-			GetDeviceByID(ID).On();
+			this[name].On();
 		}
 	}
 }

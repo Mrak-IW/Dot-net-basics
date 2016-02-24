@@ -9,12 +9,7 @@ namespace HomeWork2
 	{
 		IAdjustable<int> dimmer;
 
-		public SmartLamp(uint ID, IAdjustable<int> dimmer) : base(ID)
-		{
-			this.dimmer = dimmer;
-		}
-
-		public SmartLamp(IAdjustable<int> dimmer) : base()
+		public SmartLamp(string name, IAdjustable<int> dimmer) : base(name)
 		{
 			this.dimmer = dimmer;
 		}
@@ -63,7 +58,7 @@ namespace HomeWork2
 			string progress = new string('*', 10 * Brightness / BrightnessMax);
 			progress = "[" + progress + new string(' ', 10 - progress.Length) + "]";
 
-			string res = "Лампа[" + ID.ToString("D4") + "]:\t";
+			string res = Name + ":\t";
 			switch (DeviceState)
 			{
 				case EPowerState.On:

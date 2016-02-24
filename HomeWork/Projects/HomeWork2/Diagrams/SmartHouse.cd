@@ -3,7 +3,7 @@
   <Class Name="HomeWork2.SmartHouse">
     <Position X="2.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>EAAQABAAAAAAAAAACAAAAEQAAAgAAEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQABAAAAAAAAAACAAAAEQAAAgAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>SmartHouse.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -11,7 +11,7 @@
   <Class Name="HomeWork2.SmartDevice">
     <Position X="2.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAgIBAABAEQAAAAAAAAAAEAAAAAAAAAoA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAIBAABAEQAQAAAAEAAAEAAAAAAAAAIA=</HashCode>
       <FileName>SmartDevice.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -32,17 +32,10 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="HomeWork2.Menu">
-    <Position X="13.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>GKBoAAAAAAAAAAAAAAAACACQAAAEAIAAEgAAEAABJAE=</HashCode>
-      <FileName>Menu.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Interface Name="HomeWork2.ISmartDevice">
     <Position X="2.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAgIAAAAAEQAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAIAAAAAEQAQAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>ISmartDevice.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -84,7 +77,7 @@
   <Interface Name="HomeWork2.ISmartHouse">
     <Position X="4.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>EAAQABAAAAAAAAAACAAAAEQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQABAAAAAAAAAACAAAAEQAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>ISmartHouse.cs</FileName>
     </TypeIdentifier>
   </Interface>

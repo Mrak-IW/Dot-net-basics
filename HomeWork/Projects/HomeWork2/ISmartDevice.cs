@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public interface ISmartDevice
 	{
-		uint ID { get; }
+		string Name { get; }
 		EPowerState DeviceState { get; set; }
 		ISmartHouse Parent { get; set; }
 
