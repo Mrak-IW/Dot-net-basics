@@ -49,22 +49,22 @@
     <Compile Include="Menu\MenuAdd.cs" />
     <Compile Include="Menu\IMenu.cs" />
     <Compile Include="Menu\CommandMenu.cs" />
-    <Compile Include="Dimmer.cs" />
-    <Compile Include="EPowerState.cs" />
-    <Compile Include="IAdjustable.cs" />
-    <Compile Include="ISmartDevice.cs" />
-    <Compile Include="IHaveThermostat.cs" />
-    <Compile Include="IHaveClock.cs" />
-    <Compile Include="IBrightable.cs" />
-    <Compile Include="IOpenCloseable.cs" />
-    <Compile Include="IRepearable.cs" />
-    <Compile Include="ISmartHouse.cs" />
+    <Compile Include="SmartHouse\Dimmer.cs" />
+    <Compile Include="SmartHouse\EPowerState.cs" />
+    <Compile Include="SmartHouse\IAdjustable.cs" />
+    <Compile Include="SmartHouse\ISmartDevice.cs" />
+    <Compile Include="SmartHouse\IHaveThermostat.cs" />
+    <Compile Include="SmartHouse\IHaveClock.cs" />
+    <Compile Include="SmartHouse\IBrightable.cs" />
+    <Compile Include="SmartHouse\IOpenCloseable.cs" />
+    <Compile Include="SmartHouse\IRepearable.cs" />
+    <Compile Include="SmartHouse\ISmartHouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Menu\MenuRemove.cs" />
-    <Compile Include="SmartDevice.cs" />
-    <Compile Include="SmartHouse.cs" />
-    <Compile Include="SmartLamp.cs" />
+    <Compile Include="SmartHouse\SmartDevice.cs" />
+    <Compile Include="SmartHouse\SmartHouse.cs" />
+    <Compile Include="SmartHouse\SmartLamp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
