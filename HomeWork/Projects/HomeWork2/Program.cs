@@ -13,7 +13,9 @@ namespace HomeWork2
 			ISmartHouse sh = new SmartHouse();
 			sh.AddDevice(new SmartLamp("l1", new Dimmer(100, 10, 10)));
 			sh.AddDevice(new SmartLamp("l2", new Dimmer(100, 10, 15)));
-			sh.AddDevice(new SmartLamp("l3", new Dimmer(200, 20, 20)));
+			sh.AddDevice(new Fridge("fr", new Dimmer(0, -5, 1)));
+			sh["fr"].On();
+			(sh["fr"] as IHaveThermostat).DecreaseTemperature();
 
 			CommandMenu cm = new CommandMenu(sh);
 			IMenu add = new MenuAdd();

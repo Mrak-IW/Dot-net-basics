@@ -55,7 +55,7 @@ namespace HomeWork2
 
 		public override string ToString()
 		{
-			string progress = new string('*', 10 * Brightness / BrightnessMax);
+			string progress = new string('+', 10 * Brightness / BrightnessMax);
 			progress = "[" + progress + new string(' ', 10 - progress.Length) + "]";
 
 			string res = Name + ":\t";

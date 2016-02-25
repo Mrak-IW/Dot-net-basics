@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SmartHouse\Fridge.cs" />
     <Compile Include="Menu\MenuBrightnessDecrease.cs" />
     <Compile Include="Menu\MenuBrightnessIncrease.cs" />
     <Compile Include="Menu\MenuBrightnessSet.cs" />

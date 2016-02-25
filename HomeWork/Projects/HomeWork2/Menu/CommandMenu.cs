@@ -88,7 +88,7 @@ namespace HomeWork2
 		private void ShowState()
 		{
 			Console.Clear();
-			Console.WriteLine("В системе {0} устройств:", sh.Count);
+			Console.WriteLine("Устройств в системе {0}:", sh.Count);
 			for (int i = 0; i < sh.Count; i++)
 			{
 				Console.WriteLine(sh[i]);

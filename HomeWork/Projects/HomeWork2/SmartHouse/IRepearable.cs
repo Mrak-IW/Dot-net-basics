@@ -7,6 +7,6 @@ namespace HomeWork2
 {
 	public interface IRepareable
 	{
-		void Repare();
+		bool Repare();
 	}
 }
