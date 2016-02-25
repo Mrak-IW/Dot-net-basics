@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuRemove : Menu
+	public class MenuBrightnessDecrease : Menu
 	{
-		const string usageHelp = "<имя_устройства> [<имя_устройства_2> .. [<имя_устройства_N>]]";
-		const string description = "Выкинуть в окно";
-		const string name = "rm";
+		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
+		const string description = "Уменьшить яркость";
+		const string name = "down";
 
 		public override string Name
 		{
@@ -39,13 +39,33 @@ namespace HomeWork2
 		{
 			bool result = true;
 			output = null;
+			bool devFound;
+			string action;
+			ISmartDevice dev;
 
 			if (args.Length > 1)
 			{
 				for (int i = 1; i < args.Length; i++)
 				{
-					string action = sh[args[i]] != null ? "выброшено в окно" : DEV_NOT_FOUND;
-					sh.RemoveDevice(args[i]);
+					dev = sh[args[i]];
+					devFound = dev != null;
+
+					if (devFound)
+					{
+						if (dev is IBrightable)
+						{
+							(dev as IBrightable).DecreaseBrightness();
+							action = "стало темнее";
+						}
+						else
+						{
+							action = "не имеет настроек яркости";
+						}
+					}
+					else
+					{
+						action = DEV_NOT_FOUND;
+					}
 
 					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 				}

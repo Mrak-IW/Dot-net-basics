@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public class MenuBrightness : Menu
 	{
-		const string usageHelp = name + " <действие> <имя_устройства> [специфические параметры действия]\n\nДоступные действия:";
+		const string usageHelp = "<действие> <имя_устройства> [специфические параметры действия]\n\nДоступные действия:";
 		const string description = "Управление яркостью свечения";
 		const string name = "bri";
 

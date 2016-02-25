@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public class MenuAdd : Menu
 	{
-		const string usageHelp = name + " <тип_устройства> <имя_устройства> [специфические параметры устройства]\n\nТипы устройств:";
+		const string usageHelp = "<тип_устройства> <имя_устройства> [специфические параметры устройства]\n\nТипы устройств:";
 		const string description = "Добавление устройств в систему";
 		const string name = "add";
 

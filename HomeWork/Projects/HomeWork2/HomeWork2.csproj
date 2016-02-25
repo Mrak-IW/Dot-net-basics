@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu\MenuBrightnessDecrease.cs" />
+    <Compile Include="Menu\MenuBrightnessIncrease.cs" />
+    <Compile Include="Menu\MenuBrightnessSet.cs" />
     <Compile Include="Menu\MenuBrightness.cs" />
     <Compile Include="Menu\MenuBreak.cs" />
     <Compile Include="Menu\MenuOff.cs" />

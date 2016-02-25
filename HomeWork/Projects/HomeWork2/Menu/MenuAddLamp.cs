@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public class MenuAddLamp : Menu
 	{
-		const string usageHelp = "add " + name + " <имя_лампы> [maxBrightness [minBrightness [step]]]";
+		const string usageHelp = "<имя_лампы> [maxBrightness [minBrightness [step]]]";
 		const string description = "Добавить в систему умную лампу";
 		const string name = "lamp";
 
@@ -47,7 +47,7 @@ namespace HomeWork2
 
 			if (args.Length <= 1 || args.Length > 5)
 			{
-				output = "Недостаточно аргументов для " + args[0];
+				output = MISSING_ARGS + args[0];
 				return false;
 			}
 			else if (sh[args[1]] != null)
@@ -58,29 +58,8 @@ namespace HomeWork2
 
 			name = args[1];
 
-			if (args.Length == 1)
+			if (args.Length != 1)
 			{
-				min = max / 10;
-				step = max / 10;
-			}
-			else
-			{
-				if (args.Length > 4)
-				{
-					if (!int.TryParse(args[4], out step))
-					{
-						output = string.Format("Четвёртый аргумент \"{0}\" не является целым числом", args[4]);
-						return false;
-					}
-				}
-				if (args.Length > 3)
-				{
-					if (!int.TryParse(args[3], out min))
-					{
-						output = string.Format("Третий аргумент \"{0}\" не является целым числом", args[3]);
-						return false;
-					}
-				}
 				if (args.Length > 2)
 				{
 					if (!int.TryParse(args[2], out max))
@@ -89,14 +68,39 @@ namespace HomeWork2
 						return false;
 					}
 				}
+			
+				if (args.Length > 3)
+				{
+					if (!int.TryParse(args[3], out min))
+					{
+						output = string.Format("Третий аргумент \"{0}\" не является целым числом", args[3]);
+						return false;
+					}
+				}
+				else
+				{
+					min = max / 10;
+				}
 
+				if (args.Length > 4)
+				{
+					if (!int.TryParse(args[4], out step))
+					{
+						output = string.Format("Четвёртый аргумент \"{0}\" не является целым числом", args[4]);
+						return false;
+					}
+				}
+				else
+				{
+					step = max / 10;
+				}
 			}
 
 			IAdjustable<int> dimmer = new Dimmer(max, min, step);
 
 			ISmartDevice dev = new SmartLamp(name, dimmer);
 
-			sh.AddDevice(name, dev);
+			sh.AddDevice(dev);
 
 			return result;
 		}

@@ -9,7 +9,7 @@ namespace HomeWork2
 
 		int Count { get; }
 
-		void AddDevice(string name, ISmartDevice device);
+		bool AddDevice(ISmartDevice device);
 		void RemoveDevice(string name);
 		void TurnDeviceOff(string name);
 		void TurnDeviceOn(string name);

@@ -46,13 +46,24 @@ namespace HomeWork2
 			}
 		}
 
-		public virtual void AddDevice(string name, ISmartDevice device)
+		public virtual bool AddDevice(ISmartDevice device)
 		{
-			if (device != null)
+			bool result = device != null;
+
+			if (result)
 			{
-				devices.Add(name, device);
-				device.Parent = this;
+				if (this[device.Name] == null)
+				{
+					devices.Add(device.Name, device);
+					device.Parent = this;
+				}
+				else
+				{
+					result = false;
+				}
 			}
+
+			return result;
 		}
 
 		public virtual void RemoveDevice(string name)

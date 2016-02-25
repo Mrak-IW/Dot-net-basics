@@ -8,6 +8,8 @@ namespace HomeWork2
 	public abstract class Menu : IMenu
 	{
 		protected const string EXIT = "exit";
+		protected const string MISSING_ARGS = "Недостаточно аргументов для команды ";
+		protected const string DEV_NOT_FOUND = "не найдено";
 
 		IDictionary<string, IMenu> submenus = new Dictionary<string, IMenu>();
 
@@ -27,7 +29,7 @@ namespace HomeWork2
 		{
 			get
 			{
-				string result = string.Format("-=[ {0} ]=-\n\n{1}", Description, UsageHelpShort);
+				string result = string.Format("-=[ {0} ]=-\n\n{1} {2}", Description, FullName, UsageHelpShort);
 				foreach (KeyValuePair<string, IMenu> item in Submenus)
 				{
 					result = string.Format("{0}\n{1} - {2}", result, item.Key, item.Value);
@@ -36,6 +38,20 @@ namespace HomeWork2
 			}
 		}
 
+		public string FullName
+		{
+			get
+			{
+				if (Parent != null)
+				{
+					return string.Join(" ", Parent.FullName, this.Name);
+				}
+				else
+					return this.Name;
+			}
+		}
+
+		public IMenu Parent { get; set; }
 
 		public virtual bool Call(ISmartHouse sh, out string output, params string[] args)
 		{
@@ -43,7 +59,7 @@ namespace HomeWork2
 
 			if (args.Length <= 1)
 			{
-				output = "Недостаточно аргументов для команды " + args[0];
+				output = MISSING_ARGS + args[0];
 				return false;
 			}
 
@@ -102,6 +118,7 @@ namespace HomeWork2
 			if (!ContainsSubmenu(submenu.Name))
 			{
 				Submenus.Add(submenu.Name, submenu);
+				submenu.Parent = this;
 			}
 			else
 			{

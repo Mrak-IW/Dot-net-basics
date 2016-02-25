@@ -7,9 +7,9 @@ namespace HomeWork2
 {
 	public class MenuBreak : Menu
 	{
-		const string usageHelp = name + " <имя_устройства>";
+		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
 		const string description = "Устройство вам надоело. Пнуть его ногой, ткнуть отвёрткой...";
-		const string name = "br";
+		const string name = "break";
 
 		public override string Name
 		{
@@ -48,19 +48,19 @@ namespace HomeWork2
 				{
 					devFound = sh[args[i]] != null;
 
-					action = devFound ? "издало хлопок и задымилось" : "не найдено";
+					action = devFound ? "издало хлопок и задымилось" : DEV_NOT_FOUND;
 
 					if (devFound)
 					{
 						sh[args[i]].Break();
 					}
 
-					output = string.Format("Устройство {0} {1}", args[i], action);
+					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 				}
 			}
 			else
 			{
-				output = "Недостаточно аргументов для " + args[0];
+				output = MISSING_ARGS + args[0];
 				result = false;
 			}
 

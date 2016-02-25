@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public class MenuOn : Menu
 	{
-		const string usageHelp = name + " <имя_устройства>";
+		const string usageHelp = "<имя_устройства>";
 		const string description = "Включить устройство";
 		const string name = "on";
 
@@ -48,14 +48,14 @@ namespace HomeWork2
 				{
 					devFound = sh[args[i]] != null;
 
-					action = devFound ? "включено" : "не найдено";
+					action = devFound ? "включено" : DEV_NOT_FOUND;
 
 					if (devFound)
 					{
 						sh.TurnDeviceOn(args[i]);
 					}
 
-					output = string.Format("Устройство {0} {1}", args[i], action);
+					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 				}
 			}
 			else

@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public class MenuOff : Menu
 	{
-		const string usageHelp = name + " <имя_устройства>";
+		const string usageHelp = "<имя_устройства>";
 		const string description = "Выключить устройство";
 		const string name = "off";
 
@@ -48,19 +48,19 @@ namespace HomeWork2
 				{
 					devFound = sh[args[i]] != null;
 
-					action = devFound ? "выключено" : "не найдено";
+					action = devFound ? "выключено" : DEV_NOT_FOUND;
 
 					if (devFound)
 					{
 						sh.TurnDeviceOff(args[i]);
 					}
 
-					output = string.Format("Устройство {0} {1}", args[i], action);
+					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 				}
 			}
 			else
 			{
-				output = "Недостаточно аргументов для " + args[0];
+				output = MISSING_ARGS + args[0];
 				result = false;
 			}
 
