@@ -7,8 +7,17 @@ namespace HomeWork2
 {
 	public class MenuAddLamp : Menu
 	{
-		const string help = "add lamp <имя_лампы> [maxBrightness [minBrightness [step]]]";
+		const string usageHelp = "add " + name + " <имя_лампы> [maxBrightness [minBrightness [step]]]";
 		const string description = "Добавить в систему умную лампу";
+		const string name = "lamp";
+
+		public override string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
 
 		public override string Description
 		{
@@ -18,11 +27,11 @@ namespace HomeWork2
 			}
 		}
 
-		public override string UsageHelp
+		public override string UsageHelpShort
 		{
 			get
 			{
-				return help;
+				return usageHelp;
 			}
 		}
 
@@ -36,18 +45,18 @@ namespace HomeWork2
 			int step = 0;
 			string name;
 
-			if (args == null || args.Length == 0 || args.Length > 4)
+			if (args.Length <= 1 || args.Length > 5)
 			{
-				output = "Недостаточно аргументов";
+				output = "Недостаточно аргументов для " + args[0];
 				return false;
 			}
-			else if (sh[args[0]] != null)
+			else if (sh[args[1]] != null)
 			{
-				output = string.Format("Устройство с именем \"{0}\" уже есть в системе", args[0]);
+				output = string.Format("Устройство с именем \"{0}\" уже есть в системе", args[1]);
 				return false;
 			}
 
-			name = args[0];
+			name = args[1];
 
 			if (args.Length == 1)
 			{
@@ -56,27 +65,27 @@ namespace HomeWork2
 			}
 			else
 			{
-				if (args.Length == 4)
+				if (args.Length > 4)
 				{
-					if (!int.TryParse(args[3], out step))
+					if (!int.TryParse(args[4], out step))
 					{
-						output = string.Format("Четвёртый аргумент \"{0}\" не является целым числом", args[3]);
+						output = string.Format("Четвёртый аргумент \"{0}\" не является целым числом", args[4]);
 						return false;
 					}
 				}
-				if (args.Length == 3)
+				if (args.Length > 3)
 				{
-					if (!int.TryParse(args[2], out min))
+					if (!int.TryParse(args[3], out min))
 					{
-						output = string.Format("Третий аргумент \"{0}\" не является целым числом", args[2]);
+						output = string.Format("Третий аргумент \"{0}\" не является целым числом", args[3]);
 						return false;
 					}
 				}
-				if (args.Length == 2)
+				if (args.Length > 2)
 				{
-					if (!int.TryParse(args[1], out max))
+					if (!int.TryParse(args[2], out max))
 					{
-						output = string.Format("Второй аргумент \"{0}\" не является целым числом", args[1]);
+						output = string.Format("Второй аргумент \"{0}\" не является целым числом", args[2]);
 						return false;
 					}
 				}

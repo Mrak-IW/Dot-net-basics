@@ -14,5 +14,10 @@ namespace HomeWork2
 		string UsageHelp { get; }
 
 		string Description { get; }
+		string UsageHelpShort { get; }
+		string Name { get; }
+
+		bool AddSubmenu(IMenu submenu);
+		bool ContainsSubmenu(string name);
 	}
 }

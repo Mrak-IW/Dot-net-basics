@@ -1,53 +1,124 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
   <Class Name="HomeWork2.CommandMenu">
-    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Position X="2.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAgAAAAIAAAAAAAAAAEAIAAACAAAAAgAAA=</HashCode>
+      <HashCode>AEAAAAAAAAAgAAAAIAAAAAQAAAAEAIAAACAAQAAAAAA=</HashCode>
       <FileName>Menu\CommandMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HomeWork2.MenuAdd">
-    <Position X="0.5" Y="4.5" Width="1.75" />
+    <Position X="0.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
+      <Path>
+        <Point X="5.375" Y="4.238" />
+        <Point X="5.375" Y="4.614" />
+        <Point X="1.375" Y="4.614" />
+        <Point X="1.375" Y="5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAACAAAAAgAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
       <FileName>Menu\MenuAdd.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HomeWork2.MenuAddLamp">
-    <Position X="2.5" Y="4.5" Width="1.75" />
+    <Position X="2.5" Y="5" Width="1.75" />
     <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
       <Path>
-        <Point X="3.375" Y="3.468" />
-        <Point X="3.375" Y="3.729" />
-        <Point X="3.375" Y="3.729" />
-        <Point X="3.375" Y="4.5" />
+        <Point X="5.375" Y="4.237" />
+        <Point X="5.375" Y="4.619" />
+        <Point X="3.375" Y="4.619" />
+        <Point X="3.375" Y="5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAQAgAAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
       <FileName>Menu\MenuAddLamp.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="HomeWork2.Menu">
-    <Position X="2.5" Y="0.5" Width="1.75" />
+    <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAQAAAgEAAEAAAACAAAAAAAAAAAAAACAAAgAAA=</HashCode>
+      <HashCode>AAAAQAAQAAAgEAAEAAAACAQAARAAAAAAAAACQAAgAAA=</HashCode>
       <FileName>Menu\Menu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="HomeWork2.MenuRemove">
-    <Position X="4.5" Y="4.5" Width="1.5" />
+    <Position X="4.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
+      <Path>
+        <Point X="5.375" Y="4.238" />
+        <Point X="5.375" Y="4.635" />
+        <Point X="5.375" Y="4.635" />
+        <Point X="5.375" Y="5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
       <FileName>Menu\MenuRemove.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="HomeWork2.IMenu">
-    <Position X="4.5" Y="0.5" Width="1.75" />
+  <Class Name="HomeWork2.MenuOn">
+    <Position X="6.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
+      <Path>
+        <Point X="5.375" Y="4.238" />
+        <Point X="5.375" Y="4.625" />
+        <Point X="7.375" Y="4.625" />
+        <Point X="7.375" Y="5" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAgEAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuOn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuOff">
+    <Position X="8.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true">
+      <Path>
+        <Point X="5.375" Y="4.238" />
+        <Point X="5.375" Y="4.614" />
+        <Point X="9.375" Y="4.614" />
+        <Point X="9.375" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuOff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuBreak">
+    <Position X="10.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuBreak.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuBrightness">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <InheritanceLine Type="HomeWork2.Menu" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.375" Y="4.238" />
+        <Point X="5.375" Y="4.614" />
+        <Point X="0.26" Y="4.614" />
+        <Point X="0.26" Y="8.748" />
+        <Point X="1.275" Y="8.748" />
+        <Point X="1.275" Y="9" />
+        <Point X="1.25" Y="9" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuBrightness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="HomeWork2.IMenu">
+    <Position X="6.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgEAAAAAAAAAQAARAAAAAAAAAAQAAgAAA=</HashCode>
       <FileName>Menu\IMenu.cs</FileName>
     </TypeIdentifier>
   </Interface>

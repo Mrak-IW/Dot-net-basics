@@ -11,6 +11,10 @@ namespace HomeWork2
 
 		IDictionary<string, IMenu> submenus = new Dictionary<string, IMenu>();
 
+		public abstract string Description { get; }
+		public abstract string UsageHelpShort { get; }
+		public abstract string Name { get; }
+
 		public IDictionary<string, IMenu> Submenus
 		{
 			get
@@ -23,7 +27,7 @@ namespace HomeWork2
 		{
 			get
 			{
-				string result = null;
+				string result = string.Format("-=[ {0} ]=-\n\n{1}", Description, UsageHelpShort);
 				foreach (KeyValuePair<string, IMenu> item in Submenus)
 				{
 					result = string.Format("{0}\n{1} - {2}", result, item.Key, item.Value);
@@ -32,29 +36,28 @@ namespace HomeWork2
 			}
 		}
 
-		public abstract string Description { get; }
 
 		public virtual bool Call(ISmartHouse sh, out string output, params string[] args)
 		{
 			output = null;
 
-			if (args == null || args.Length == 0)
+			if (args.Length <= 1)
 			{
-				//output = "Недостаточно аргументов";
+				output = "Недостаточно аргументов для команды " + args[0];
 				return false;
 			}
 
 			bool result = true;
 
 			IMenu sm;
-			if (!Submenus.ContainsKey(args[0]))
+			if (!ContainsSubmenu(args[1]))
 			{
-				output = "Некорректный список аргументов";
+				output = string.Format("{0} не обладает вложенной командой {1}", args[0], args[1]);
 				result = false;
 			}
 			else
 			{
-				sm = Submenus[args[0]];
+				sm = Submenus[args[1]];
 				if (!sm.Call(sh, out output, Last(args, 1)))
 				{
 					if (output != null)
@@ -91,6 +94,25 @@ namespace HomeWork2
 		public override string ToString()
 		{
 			return Description;
+		}
+
+		public bool AddSubmenu(IMenu submenu)
+		{
+			bool result = true;
+			if (!ContainsSubmenu(submenu.Name))
+			{
+				Submenus.Add(submenu.Name, submenu);
+			}
+			else
+			{
+				result = false;
+			}
+			return result;
+		}
+
+		public bool ContainsSubmenu(string name)
+		{
+			return Submenus.ContainsKey(name);
 		}
 	}
 }

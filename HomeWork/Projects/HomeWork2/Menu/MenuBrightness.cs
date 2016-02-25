@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuAdd : Menu
+	public class MenuBrightness : Menu
 	{
-		const string usageHelp = name + " <тип_устройства> <имя_устройства> [специфические параметры устройства]\n\nТипы устройств:";
-		const string description = "Добавление устройств в систему";
-		const string name = "add";
+		const string usageHelp = name + " <действие> <имя_устройства> [специфические параметры действия]\n\nДоступные действия:";
+		const string description = "Управление яркостью свечения";
+		const string name = "bri";
 
 		public override string Name
 		{

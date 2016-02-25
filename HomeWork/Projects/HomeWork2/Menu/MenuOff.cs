@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuRemove : Menu
+	public class MenuOff : Menu
 	{
-		const string usageHelp = name + " <имя_устройства> [<имя_устройства_2> .. [<имя_устройства_N>]]";
-		const string description = "Выкинуть в окно";
-		const string name = "rm";
+		const string usageHelp = name + " <имя_устройства>";
+		const string description = "Выключить устройство";
+		const string name = "off";
 
 		public override string Name
 		{
@@ -39,15 +39,23 @@ namespace HomeWork2
 		{
 			bool result = true;
 			output = null;
+			bool devFound;
+			string action;
 
 			if (args.Length > 1)
 			{
 				for (int i = 1; i < args.Length; i++)
 				{
-					string action = sh[args[i]] != null ? "выброшено в окно" : "не найдено";
-					sh.RemoveDevice(args[i]);
+					devFound = sh[args[i]] != null;
 
-					output = string.Format(" Устройство {0} {1}", args[i], action);
+					action = devFound ? "выключено" : "не найдено";
+
+					if (devFound)
+					{
+						sh.TurnDeviceOff(args[i]);
+					}
+
+					output = string.Format("Устройство {0} {1}", args[i], action);
 				}
 			}
 			else

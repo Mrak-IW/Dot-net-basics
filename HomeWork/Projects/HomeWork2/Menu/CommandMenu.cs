@@ -7,12 +7,19 @@ namespace HomeWork2
 {
 	class CommandMenu : Menu
 	{
-		
-
-		const string description = "Меню умного дома"; 
-		const string usageHelp = "\n" + EXIT + " - выход";
-
 		ISmartHouse sh;
+
+		const string description = "Меню умного дома";
+		const string usageHelp = EXIT + " - выход";
+		const string name = "sh";
+
+		public override string Name
+		{
+			get
+			{
+				return name;
+			}
+		}
 
 		public override string Description
 		{
@@ -22,11 +29,11 @@ namespace HomeWork2
 			}
 		}
 
-		public override string UsageHelp
+		public override string UsageHelpShort
 		{
 			get
 			{
-				return string.Format("-=[ {0} ]=-\n{1}\n{2}", Description, usageHelp, base.UsageHelp);
+				return usageHelp;
 			}
 		}
 
@@ -47,16 +54,15 @@ namespace HomeWork2
 				ShowState();
 				if (output != null)
 				{
-					Console.WriteLine();
 					Console.WriteLine(output);
 				}
-				Console.Write("\nsh> ");
-				ans = Console.ReadLine();
+				Console.Write("\n{0}> ", this.Name);
+				ans = string.Concat(this.Name, " ", Console.ReadLine());	//Это, чтобы нулевым аргументом каждой команды было её имя
 				args = ans.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-				if (args != null && args.Length > 0)
+				if (args != null && args.Length > 1)
 				{
-					if (args[0] == EXIT)
+					if (args[1] == EXIT)
 					{
 						break;
 					}
@@ -65,7 +71,14 @@ namespace HomeWork2
 				result = Call(sh, out output, args);
 				if (!result)
 				{
-					output = this.UsageHelp;
+					if (output != null)
+					{
+						output = string.Join("\n\n", output, this.UsageHelp);
+					}
+					else
+					{
+						output = this.UsageHelp;
+					}
 				}
 			}
 
