@@ -43,10 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuAddFridge.cs" />
-    <Compile Include="MenuClose.cs" />
+    <Compile Include="SmartHouse\Clock.cs" />
+    <Compile Include="Menu\MenuRepare.cs" />
+    <Compile Include="Menu\MenuTemperatureSet.cs" />
+    <Compile Include="Menu\MenuAddFridge.cs" />
+    <Compile Include="Menu\MenuClose.cs" />
     <Compile Include="Menu\MenuTemperatureDecrease.cs" />
-    <Compile Include="MenuOpen.cs" />
+    <Compile Include="Menu\MenuOpen.cs" />
     <Compile Include="Menu\MenuTemperature.cs" />
     <Compile Include="Menu\MenuTemperatureIncrease.cs" />
     <Compile Include="SmartHouse\Fridge.cs" />

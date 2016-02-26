@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuOn : Menu
+	public class MenuRepare : Menu
 	{
-		const string usageHelp = "<имя_устройства>";
-		const string description = "Включить устройство";
-		const string name = "on";
+		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
+		const string description = "Починить устройство";
+		const string name = "repare";
 
 		public override string Name
 		{
@@ -40,6 +40,7 @@ namespace HomeWork2
 			bool result = true;
 			output = null;
 			ISmartDevice dev;
+			IRepareable devOK;
 			string action;
 
 			if (args != null && args.Length > 0)
@@ -50,14 +51,15 @@ namespace HomeWork2
 
 					if (dev != null)
 					{
-						dev.On();
-						if (dev.DeviceState == EPowerState.On)
+						if (dev is IRepareable)
 						{
-							action = "включено";
+							devOK = dev as IRepareable;
+							devOK.Repare();
+							action = ": Вы подёргали какие-то проводки и протёрли всё тряпкой";
 						}
 						else
 						{
-							action = "не включается";
+							action = "проще выкинуть";
 						}
 					}
 					else
@@ -70,7 +72,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				output = "Недостаточно аргументов для " + Name;
+				output = MISSING_ARGS + Name;
 				result = false;
 			}
 

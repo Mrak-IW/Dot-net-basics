@@ -5,10 +5,10 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuBrightnessSet : Menu
+	public class MenuTemperatureSet : Menu
 	{
-		const string usageHelp = "<имя_устройства_1> <яркость_1>[ .. <имя_устройства_N> <яркость_N>]\n\nЕсли заданная яркость недоступна для устройства, команда будет проигнорирована.";
-		const string description = "Задать яркость числом";
+		const string usageHelp = "<имя_устройства_1> <яркость_1>[ .. <имя_устройства_N> <яркость_N>]\n\nЕсли заданная температура недоступна для устройства, команда будет проигнорирована.";
+		const string description = "Задать температуру числом";
 		const string name = "set";
 
 		public override string Name
@@ -41,6 +41,7 @@ namespace HomeWork2
 			int value;
 			string action;
 			ISmartDevice dev;
+			IHaveThermostat devOK;
 
 			output = null;
 
@@ -59,14 +60,15 @@ namespace HomeWork2
 						dev = sh[args[i]];
 						if (dev != null)
 						{
-							if (dev is IBrightable)
+							if (dev is IHaveThermostat)
 							{
-								(dev as IBrightable).Brightness = value;
-								action = string.Format("- яркость установлена в {1}", dev.Name, (dev as IBrightable).Brightness);
+								devOK = dev as IHaveThermostat;
+								devOK.Temperature = value;
+								action = string.Format("- температура установлена в {1}", dev.Name, devOK.Temperature);
 							}
 							else
 							{
-								action = "не имеет настроек яркости";
+								action = "не имеет настроек температуры";
 							}
 						}
 						else

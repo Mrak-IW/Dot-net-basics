@@ -62,7 +62,10 @@ namespace HomeWork2
 
 		public virtual void Off()
 		{
-			DeviceState = EPowerState.Off;
+			if (DeviceState != EPowerState.Broken)
+			{
+				DeviceState = EPowerState.Off;
+			}
 		}
 
 		public virtual void On()

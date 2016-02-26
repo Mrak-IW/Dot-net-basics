@@ -139,6 +139,20 @@
       <FileName>Menu\MenuTemperatureDecrease.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="HomeWork2.MenuTemperatureSet">
+    <Position X="8.25" Y="17" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuTemperatureSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuRepare">
+    <Position X="3.25" Y="27.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>Menu\MenuRepare.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="HomeWork2.IMenu">
     <Position X="2" Y="0.5" Width="1.75" />
     <TypeIdentifier>

@@ -14,7 +14,9 @@ namespace HomeWork2
 			sh.AddDevice(new SmartLamp("l1", new Dimmer(100, 10, 10)));
 			sh.AddDevice(new SmartLamp("l2", new Dimmer(100, 10, 15)));
 			sh.AddDevice(new Fridge("fr", new Dimmer(0, -5, 1)));
+			sh.AddDevice(new Clock("clk"));
 			sh["fr"].On();
+			sh["clk"].On();
 			(sh["fr"] as IHaveThermostat).DecreaseTemperature();
 
 			CommandMenu cm = new CommandMenu(sh);
@@ -27,6 +29,7 @@ namespace HomeWork2
 			cm.AddSubmenu(new MenuOn());
 			cm.AddSubmenu(new MenuOff());
 			cm.AddSubmenu(new MenuBreak());
+			cm.AddSubmenu(new MenuRepare());
 			cm.AddSubmenu(bri);
 			cm.AddSubmenu(temp);
 			cm.AddSubmenu(new MenuOpen());
@@ -41,6 +44,7 @@ namespace HomeWork2
 
 			temp.AddSubmenu(new MenuTemperatureIncrease());
 			temp.AddSubmenu(new MenuTemperatureDecrease());
+			temp.AddSubmenu(new MenuTemperatureSet());
 
 			cm.Show();
 		}
