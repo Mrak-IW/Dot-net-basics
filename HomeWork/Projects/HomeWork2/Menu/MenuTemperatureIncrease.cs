@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuBrightnessDecrease : Menu
+	public class MenuTemperatureIncrease : Menu
 	{
 		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
-		const string description = "Уменьшить яркость";
-		const string name = "do";
+		const string description = "Увеличить температуру";
+		const string name = "up";
 
 		public override string Name
 		{
@@ -52,14 +52,14 @@ namespace HomeWork2
 
 					if (devFound)
 					{
-						if (dev is IBrightable)
+						if (dev is IHaveThermostat)
 						{
-							(dev as IBrightable).DecreaseBrightness();
-							action = "стало темнее";
+							(dev as IHaveThermostat).IncreaseTemperature();
+							action = "стало теплее";
 						}
 						else
 						{
-							action = "не имеет настроек яркости";
+							action = "не имеет настроек температуры";
 						}
 					}
 					else

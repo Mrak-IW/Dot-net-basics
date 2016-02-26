@@ -39,6 +39,9 @@ namespace HomeWork2
 			bri.AddSubmenu(new MenuBrightnessIncrease());
 			bri.AddSubmenu(new MenuBrightnessSet());
 
+			temp.AddSubmenu(new MenuTemperatureIncrease());
+			temp.AddSubmenu(new MenuTemperatureDecrease());
+
 			cm.Show();
 		}
 	}

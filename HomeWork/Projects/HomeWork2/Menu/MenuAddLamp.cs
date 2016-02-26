@@ -94,11 +94,18 @@ namespace HomeWork2
 				step = max / 10;
 			}
 
-			IAdjustable<int> dimmer = new Dimmer(max, min, step);
+			try
+			{
+				IAdjustable<int> dimmer = new Dimmer(max, min, step);
+				ISmartDevice dev = new SmartLamp(devName, dimmer);
 
-			ISmartDevice dev = new SmartLamp(devName, dimmer);
-
-			sh.AddDevice(dev);
+				sh.AddDevice(dev);
+			}
+			catch (Exception e)
+			{
+				output = e.Message;
+				return false;
+			}
 
 			return result;
 		}

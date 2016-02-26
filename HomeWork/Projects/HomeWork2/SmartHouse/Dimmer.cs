@@ -16,11 +16,11 @@ namespace HomeWork2
 		{
 			if (max < min)
 			{
-				throw new IndexOutOfRangeException("Попытка создать диммер с некорректными границами диапазона значений ");
+				throw new IndexOutOfRangeException("Попытка задать некорректные границы диапазона значений ");
 			}
 			if (step < 0 || step > max - min)
 			{
-				throw new IndexOutOfRangeException("Попытка создать диммер с некорректным шагом");
+				throw new IndexOutOfRangeException("Попытка задать некорректный шаг изменения");
 			}
 			this.min = min;
 			this.max = max;

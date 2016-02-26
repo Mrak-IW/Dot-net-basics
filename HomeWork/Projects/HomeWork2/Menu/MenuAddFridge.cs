@@ -37,7 +37,6 @@ namespace HomeWork2
 
 		public override bool Call(ISmartHouse sh, out string output, params string[] args)
 		{
-			bool result = true;
 			output = null;
 
 			int max = 5;
@@ -94,15 +93,21 @@ namespace HomeWork2
 				step = (max - min) / 10;
 			}
 
-			IAdjustable<int> dimmer = new Dimmer(max, min, step);
+			try
+			{
+				IAdjustable<int> dimmer = new Dimmer(max, min, step);
+				dimmer.CurrentLevel = (dimmer.Max - dimmer.Min) / 2 + dimmer.Min;
 
-			dimmer.CurrentLevel = (dimmer.Max - dimmer.Min) / 2 + dimmer.Min;
+				ISmartDevice dev = new Fridge(devName, dimmer);
+				sh.AddDevice(dev);
+			}
+			catch (Exception e)
+			{
+				output = e.Message;
+				return false;
+			}
 
-			ISmartDevice dev = new Fridge(devName, dimmer);
-
-			sh.AddDevice(dev);
-
-			return result;
+			return true;
 		}
 	}
 }
