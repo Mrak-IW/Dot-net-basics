@@ -40,9 +40,9 @@ namespace HomeWork2
 			bool result = true;
 			output = null;
 
-			if (args.Length > 1)
+			if (args != null && args.Length > 0)
 			{
-				for (int i = 1; i < args.Length; i++)
+				for (int i = 0; i < args.Length; i++)
 				{
 					string action = sh[args[i]] != null ? "выброшено в окно" : DEV_NOT_FOUND;
 					sh.RemoveDevice(args[i]);
@@ -52,7 +52,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				output = MISSING_ARGS + args[0];
+				output = MISSING_ARGS + Name;
 				result = false;
 			}
 

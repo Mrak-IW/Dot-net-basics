@@ -10,7 +10,7 @@ namespace HomeWork2
 		ISmartHouse sh;
 
 		const string description = "Меню умного дома";
-		const string usageHelp = "<команда> [аргументы команды]" + EXIT + " - выход";
+		const string usageHelp = "<команда> [аргументы команды]\n\n" + EXIT + "\tвыход";
 		const string name = "sh>";
 
 		public override string Name
@@ -44,25 +44,32 @@ namespace HomeWork2
 
 		public void Show()
 		{
-			string ans;
+			const int cmdIndex = 0;
+
+			string ans = null;
 			string output = null;
 			bool result = true;
 			string[] args;
-
+			string cmd;
 			while (true)
 			{
 				ShowState();
+				if (ans != null)
+				{
+					Console.WriteLine(string.Format("{0} {1}\n", Name, ans));
+				}
 				if (output != null)
 				{
 					Console.WriteLine(output);
 				}
 				Console.Write("\n{0} ", this.Name);
-				ans = string.Concat(this.Name, " ", Console.ReadLine());	//Это, чтобы нулевым аргументом каждой команды было её имя
+				ans = Console.ReadLine();
 				args = ans.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-				if (args != null && args.Length > 1)
+				if (args != null && args.Length > cmdIndex)
 				{
-					if (args[1] == EXIT)
+					cmd = args[cmdIndex];
+					if (cmd == EXIT)
 					{
 						break;
 					}

@@ -3,7 +3,7 @@
   <Class Name="HomeWork2.SmartHouse">
     <Position X="2.25" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAQABAAAAAAAAAAAAAAAEQAAAgAAEAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAABAACAAAAAQAAAgAAEAEAAAAAAAAAAA=</HashCode>
       <FileName>SmartHouse\SmartHouse.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -85,7 +85,7 @@
   <Interface Name="HomeWork2.ISmartHouse">
     <Position X="4.5" Y="0.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAQABAAAAAAAAAACAAAAEQAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAQAAAAAAAAAAAACAAAAAQAAAgAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>SmartHouse\ISmartHouse.cs</FileName>
     </TypeIdentifier>
   </Interface>

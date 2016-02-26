@@ -39,20 +39,23 @@ namespace HomeWork2
 		{
 			bool result = true;
 			output = null;
-			bool devFound;
+			ISmartDevice dev;
 			string action;
 
-			if (args.Length > 1)
+			if (args != null && args.Length > 0)
 			{
-				for (int i = 1; i < args.Length; i++)
+				for (int i = 0; i < args.Length; i++)
 				{
-					devFound = sh[args[i]] != null;
+					dev = sh[args[i]];
 
-					action = devFound ? "включено" : DEV_NOT_FOUND;
-
-					if (devFound)
+					if (dev != null)
 					{
-						sh.TurnDeviceOn(args[i]);
+						dev.On();
+						action = "включено";
+					}
+					else
+					{
+						action = DEV_NOT_FOUND;
 					}
 
 					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
@@ -60,7 +63,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				output = "Недостаточно аргументов для " + args[0];
+				output = "Недостаточно аргументов для " + Name;
 				result = false;
 			}
 

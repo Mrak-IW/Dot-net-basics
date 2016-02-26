@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="Простые команды с одним параметром">
+    <Position X="3.27" Y="5.534" Height="0.51" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Семейство команд добавления">
+    <Position X="0.777" Y="5.533" Height="0.51" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Семейство команд управления яркостью">
+    <Position X="5.735" Y="5.531" Height="0.51" Width="1.7" />
+  </Comment>
+  <Comment CommentText="Семейство команд управления температурой">
+    <Position X="8.225" Y="5.518" Height="0.51" Width="1.796" />
+  </Comment>
   <Class Name="HomeWork2.CommandMenu">
     <Position X="7" Y="0.5" Width="1.75" />
     <TypeIdentifier>
@@ -24,7 +36,7 @@
   <Class Name="HomeWork2.Menu">
     <Position X="4.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAQAAAgGIAEAAAAyAQAARAAAAAAAAACQAAgAAA=</HashCode>
+      <HashCode>AAAAQAAQAAAgCJAECAAAyAQAARAAAAAEAAACQAAgAAA=</HashCode>
       <FileName>Menu\Menu.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -85,10 +97,38 @@
       <FileName>Menu\MenuBrightnessDecrease.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="HomeWork2.MenuAddFridge">
+    <Position X="0.75" Y="13.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>MenuAddFridge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuTemperature">
+    <Position X="8.25" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>MenuTemperature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuOpen">
+    <Position X="3.25" Y="20.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>MenuOpen.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HomeWork2.MenuClose">
+    <Position X="3.25" Y="24" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>MenuClose.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="HomeWork2.IMenu">
     <Position X="2" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAQAAAAAAgEIAAAAAAQAQAARAAAAAAAAAAQAAgAAA=</HashCode>
+      <HashCode>AAAAQAAAAAAgAIAACAAAQAQAARAAAAAAAAAAQAAgAAA=</HashCode>
       <FileName>Menu\IMenu.cs</FileName>
     </TypeIdentifier>
   </Interface>

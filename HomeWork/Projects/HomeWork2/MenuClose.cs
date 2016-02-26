@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuBrightnessIncrease : Menu
+	public class MenuClose : Menu
 	{
 		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
-		const string description = "Увеличить яркость";
-		const string name = "up";
+		const string description = "Закрыть устройство";
+		const string name = "close";
 
 		public override string Name
 		{
@@ -39,27 +39,32 @@ namespace HomeWork2
 		{
 			bool result = true;
 			output = null;
-			bool devFound;
-			string action;
 			ISmartDevice dev;
+			string action;
 
 			if (args != null && args.Length > 0)
 			{
 				for (int i = 0; i < args.Length; i++)
 				{
 					dev = sh[args[i]];
-					devFound = dev != null;
 
-					if (devFound)
+					if (dev != null)
 					{
-						if (dev is IBrightable)
+						if (dev is IOpenCloseable)
 						{
-							(dev as IBrightable).IncreaseBrightness();
-							action = "стало ярче";
+							if (!(dev as IOpenCloseable).Opened)
+							{
+								action = "закрылось";
+								(dev as IOpenCloseable).Close();
+							}
+							else
+							{
+								action = "\"То, что закрыто, закрыться не может\"";
+							}
 						}
 						else
 						{
-							action = "не имеет настроек яркости";
+							action = "не знает, что ему нужно закрыть";
 						}
 					}
 					else

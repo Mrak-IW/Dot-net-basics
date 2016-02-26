@@ -5,11 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class MenuAddLamp : Menu
+	public class MenuAddFridge : Menu
 	{
-		const string usageHelp = "<имя_лампы> [maxBrightness [minBrightness [step]]]";
-		const string description = "Добавить в систему умную лампу";
-		const string name = "lp";
+		const string usageHelp = "<имя_холодильника> [maxTemp [minTemp [step]]]";
+		const string description = "Добавить в систему холодильник";
+		const string name = "fr";
 
 		public override string Name
 		{
@@ -40,7 +40,7 @@ namespace HomeWork2
 			bool result = true;
 			output = null;
 
-			int max = 100;
+			int max = 5;
 			int min = 0;
 			int step = 0;
 			int i = 0;
@@ -78,7 +78,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				min = max / 10;
+				min = -5;
 			}
 
 			if (args.Length > ++i)
@@ -91,12 +91,14 @@ namespace HomeWork2
 			}
 			else
 			{
-				step = max / 10;
+				step = (max - min) / 10;
 			}
 
 			IAdjustable<int> dimmer = new Dimmer(max, min, step);
 
-			ISmartDevice dev = new SmartLamp(devName, dimmer);
+			dimmer.CurrentLevel = (dimmer.Max - dimmer.Min) / 2 + dimmer.Min;
+
+			ISmartDevice dev = new Fridge(devName, dimmer);
 
 			sh.AddDevice(dev);
 

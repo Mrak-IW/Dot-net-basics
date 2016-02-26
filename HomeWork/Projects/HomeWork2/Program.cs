@@ -19,25 +19,25 @@ namespace HomeWork2
 
 			CommandMenu cm = new CommandMenu(sh);
 			IMenu add = new MenuAdd();
-			IMenu rm = new MenuRemove();
-			IMenu on = new MenuOn();
-			IMenu off = new MenuOff();
-			IMenu br = new MenuBreak();
 			IMenu bri = new MenuBrightness();
+			IMenu temp = new MenuTemperature();
+
 			cm.AddSubmenu(add);
-			cm.AddSubmenu(rm);
-			cm.AddSubmenu(on);
-			cm.AddSubmenu(off);
-			cm.AddSubmenu(br);
+			cm.AddSubmenu(new MenuRemove());
+			cm.AddSubmenu(new MenuOn());
+			cm.AddSubmenu(new MenuOff());
+			cm.AddSubmenu(new MenuBreak());
 			cm.AddSubmenu(bri);
+			cm.AddSubmenu(temp);
+			cm.AddSubmenu(new MenuOpen());
+			cm.AddSubmenu(new MenuClose());
 
-			IMenu addLamp = new MenuAddLamp();
-			add.AddSubmenu(addLamp);
+			add.AddSubmenu(new MenuAddLamp());
+			add.AddSubmenu(new MenuAddFridge());
 
-			IMenu brightDown = new MenuBrightnessDecrease();
-			IMenu brightUp = new MenuBrightnessIncrease();
-			bri.AddSubmenu(brightUp);
-			bri.AddSubmenu(brightDown);
+			bri.AddSubmenu(new MenuBrightnessDecrease());
+			bri.AddSubmenu(new MenuBrightnessIncrease());
+			bri.AddSubmenu(new MenuBrightnessSet());
 
 			cm.Show();
 		}

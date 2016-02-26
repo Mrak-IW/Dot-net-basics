@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace HomeWork2
 {
-	public abstract class Menu : IMenu
+	public abstract class Menu : IMenu, IEnumerable<IMenu>
 	{
 		protected const string EXIT = "exit";
 		protected const string MISSING_ARGS = "Недостаточно аргументов для команды ";
@@ -17,22 +18,14 @@ namespace HomeWork2
 		public abstract string UsageHelpShort { get; }
 		public abstract string Name { get; }
 
-		public IDictionary<string, IMenu> Submenus
-		{
-			get
-			{
-				return submenus;
-			}
-		}
-
 		public virtual string UsageHelp
 		{
 			get
 			{
 				string result = string.Format("-=[ {0} ]=-\n\n{1} {2}", Description, FullName, UsageHelpShort);
-				foreach (KeyValuePair<string, IMenu> item in Submenus)
+				foreach (IMenu item in this)
 				{
-					result = string.Format("{0}\n{1} - {2}", result, item.Key, item.Value);
+					result = string.Format("{0}\n{1}\t{2}", result, item.Name, item);
 				}
 				return result;
 			}
@@ -42,7 +35,7 @@ namespace HomeWork2
 		{
 			get
 			{
-				if (Parent != null)
+				if (Parent != null && Parent.Parent != null)
 				{
 					return string.Join(" ", Parent.FullName, this.Name);
 				}
@@ -53,27 +46,43 @@ namespace HomeWork2
 
 		public IMenu Parent { get; set; }
 
+		public IMenu this[string submenuName]
+		{
+			get
+			{
+				if (submenus.ContainsKey(submenuName))
+				{
+					return submenus[submenuName];
+				}
+				else
+				{
+					return null;
+				}
+			}
+		}
+
 		public virtual bool Call(ISmartHouse sh, out string output, params string[] args)
 		{
 			output = null;
 
-			if (args.Length <= 1)
+			if (args == null || args.Length == 0)
 			{
-				output = MISSING_ARGS + args[0];
+				output = MISSING_ARGS + Name;
 				return false;
 			}
 
 			bool result = true;
+			string submenuName = args[0];
 
 			IMenu sm;
-			if (!ContainsSubmenu(args[1]))
+			if (!ContainsSubmenu(submenuName))
 			{
-				output = string.Format("{0} не обладает вложенной командой {1}", args[0], args[1]);
+				output = string.Format("{0} не обладает вложенной командой {1}", Name, submenuName);
 				result = false;
 			}
 			else
 			{
-				sm = Submenus[args[1]];
+				sm = submenus[submenuName];
 				if (!sm.Call(sh, out output, Last(args, 1)))
 				{
 					if (output != null)
@@ -117,7 +126,7 @@ namespace HomeWork2
 			bool result = true;
 			if (!ContainsSubmenu(submenu.Name))
 			{
-				Submenus.Add(submenu.Name, submenu);
+				submenus.Add(submenu.Name, submenu);
 				submenu.Parent = this;
 			}
 			else
@@ -129,7 +138,17 @@ namespace HomeWork2
 
 		public bool ContainsSubmenu(string name)
 		{
-			return Submenus.ContainsKey(name);
+			return submenus.ContainsKey(name);
+		}
+
+		public IEnumerator<IMenu> GetEnumerator()
+		{
+			return submenus.Values.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return submenus.Values.GetEnumerator();
 		}
 	}
 }

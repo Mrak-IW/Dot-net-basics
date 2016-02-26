@@ -71,14 +71,14 @@ namespace HomeWork2
 
 		public override string ToString()
 		{
-			string progress = new string('*', 10 * (dimmer.Max - Temperature) / (dimmer.Max - dimmer.Min));
-			progress = "[" + progress + new string(' ', 10 - progress.Length) + "]";
-
 			string res = Name + ":\t";
 			switch (DeviceState)
 			{
 				case EPowerState.On:
-					res = res + "жужжит " + progress + " " + Temperature + " C";
+					string progress = new string('*', 10 * (dimmer.Max - Temperature) / (dimmer.Max - dimmer.Min));
+					progress = string.Format("[{2}|{0}{1}|{3}]", progress, new string(' ', 10 - progress.Length), dimmer.Min, dimmer.Max);
+
+					res = string.Format("{0}жужжит {1} {2}C", res, progress, Temperature);
 					break;
 				case EPowerState.Off:
 					res = res + "не жужжит";
@@ -87,6 +87,8 @@ namespace HomeWork2
 					res = res + "дымит";
 					break;
 			}
+
+			res = res + (Opened ? " : открыт" : " : закрыт");
 
 			return res;
 		}

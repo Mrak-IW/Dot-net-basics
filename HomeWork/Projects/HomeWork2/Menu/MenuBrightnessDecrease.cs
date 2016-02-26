@@ -9,7 +9,7 @@ namespace HomeWork2
 	{
 		const string usageHelp = "<имя_устройства_1> [ .. <имя_устройства_N>]";
 		const string description = "Уменьшить яркость";
-		const string name = "down";
+		const string name = "dw";
 
 		public override string Name
 		{
@@ -43,9 +43,9 @@ namespace HomeWork2
 			string action;
 			ISmartDevice dev;
 
-			if (args.Length > 1)
+			if (args != null && args.Length > 0)
 			{
-				for (int i = 1; i < args.Length; i++)
+				for (int i = 0; i < args.Length; i++)
 				{
 					dev = sh[args[i]];
 					devFound = dev != null;
@@ -72,7 +72,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				output = MISSING_ARGS + args[0];
+				output = MISSING_ARGS + Name;
 				result = false;
 			}
 

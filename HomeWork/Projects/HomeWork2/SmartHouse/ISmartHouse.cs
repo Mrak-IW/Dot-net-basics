@@ -11,7 +11,5 @@ namespace HomeWork2
 
 		bool AddDevice(ISmartDevice device);
 		void RemoveDevice(string name);
-		void TurnDeviceOff(string name);
-		void TurnDeviceOn(string name);
 	}
 }

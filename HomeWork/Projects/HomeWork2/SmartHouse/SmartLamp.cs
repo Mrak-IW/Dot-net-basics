@@ -55,14 +55,14 @@ namespace HomeWork2
 
 		public override string ToString()
 		{
-			string progress = new string('+', 10 * Brightness / BrightnessMax);
-			progress = "[" + progress + new string(' ', 10 - progress.Length) + "]";
-
 			string res = Name + ":\t";
 			switch (DeviceState)
 			{
 				case EPowerState.On:
-					res = res + "включена " + progress + " " + Brightness + " лм";
+					string progress = new string('+', 10 * Brightness / BrightnessMax);
+					progress = string.Format("[{2}|{0}{1}|{3}]", progress, new string(' ', 10 - progress.Length), dimmer.Min, dimmer.Max);
+
+					res = string.Format("{0}включена {1} {2}лм", res, progress, Brightness);
 					break;
 				case EPowerState.Off:
 					res = res + "выключена";

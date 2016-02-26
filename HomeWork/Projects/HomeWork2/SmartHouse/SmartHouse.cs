@@ -6,7 +6,7 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public class SmartHouse : ISmartHouse
+	public class SmartHouse : ISmartHouse, IEnumerable<ISmartDevice>
 	{
 		private SortedList<string, ISmartDevice> devices;
 
@@ -71,14 +71,14 @@ namespace HomeWork2
 			devices.Remove(name);
 		}
 
-		public void TurnDeviceOff(string name)
+		public IEnumerator<ISmartDevice> GetEnumerator()
 		{
-			this[name].Off();
+			return devices.Values.GetEnumerator();
 		}
 
-		public void TurnDeviceOn(string name)
+		IEnumerator IEnumerable.GetEnumerator()
 		{
-			this[name].On();
+			return devices.Values.GetEnumerator();
 		}
 	}
 }

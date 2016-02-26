@@ -7,8 +7,8 @@ namespace HomeWork2
 {
 	public class MenuBrightnessSet : Menu
 	{
-		const string usageHelp = "<имя_устройства_1> <яркость_1>[ .. <имя_устройства_N> <яркость_N>]";
-		const string description = "Задать яркость";
+		const string usageHelp = "<имя_устройства_1> <яркость_1>[ .. <имя_устройства_N> <яркость_N>]\n\nЕсли заданная яркость недоступна для устройства, команда будет проигнорирована.";
+		const string description = "Задать яркость числом";
 		const string name = "set";
 
 		public override string Name
@@ -38,48 +38,47 @@ namespace HomeWork2
 		public override bool Call(ISmartHouse sh, out string output, params string[] args)
 		{
 			bool result = true;
-			output = null;
-			bool devFound;
+			int value;
 			string action;
 			ISmartDevice dev;
 
-			if (args.Length % 2 == 0)
-			{
-				output = string.Format("Количество аргументов {0} должно быть чётным", Name);
-				result = false;
-			}
+			output = null;
 
-			if (args.Length == 1)
+			if (args == null || args.Length % 2 != 0)
 			{
-				output = MISSING_ARGS + args[0];
+				output = string.Format("Количество аргументов {0} должно быть чётным и больше нуля", Name);
 				result = false;
 			}
 
 			if (result)
 			{
-				for (int i = 1; i < args.Length; i += 2)
+				for (int i = 0; i < args.Length; i += 2)
 				{
-					dev = sh[args[i]];
-					devFound = dev != null;
-
-					if (devFound)
+					if (int.TryParse(args[i + 1], out value))
 					{
-						if (dev is IBrightable)
+						dev = sh[args[i]];
+						if (dev != null)
 						{
-							(dev as IBrightable).IncreaseBrightness();
-							action = "стало темнее";
+							if (dev is IBrightable)
+							{
+								(dev as IBrightable).Brightness = value;
+								action = string.Format("- яркость установлена в {1}", dev.Name, (dev as IBrightable).Brightness);
+							}
+							else
+							{
+								action = "не имеет настроек яркости";
+							}
 						}
 						else
 						{
-							action = "не имеет настроек яркости";
+							action = DEV_NOT_FOUND;
 						}
+						output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 					}
 					else
 					{
-						action = DEV_NOT_FOUND;
+						output = string.Format("{2} Аргумент[{0}] = {1} не является целым числом", i + 1, args[i + 1], (output != null ? output + "\n" : ""));
 					}
-
-					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
 				}
 			}
 

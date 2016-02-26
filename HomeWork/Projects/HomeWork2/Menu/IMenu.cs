@@ -7,12 +7,11 @@ namespace HomeWork2
 {
 	public interface IMenu
 	{
-		IDictionary<string, IMenu> Submenus { get; }
-
 		bool Call(ISmartHouse sh, out string output, params string[] args);
 
-		string UsageHelp { get; }
+		IMenu this[string submenuName] { get; }
 
+		string UsageHelp { get; }
 		string Description { get; }
 		string UsageHelpShort { get; }
 		string Name { get; }
