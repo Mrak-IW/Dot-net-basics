@@ -37,6 +37,7 @@ namespace HomeWork2
 
 			add.AddSubmenu(new MenuAddLamp());
 			add.AddSubmenu(new MenuAddFridge());
+			add.AddSubmenu(new MenuAddClock());
 
 			bri.AddSubmenu(new MenuBrightnessDecrease());
 			bri.AddSubmenu(new MenuBrightnessIncrease());

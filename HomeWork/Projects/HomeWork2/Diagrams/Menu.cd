@@ -153,6 +153,13 @@
       <FileName>Menu\MenuRepare.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="HomeWork2.MenuAddClock">
+    <Position X="0.75" Y="17" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
+      <FileName>MenuAddClock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="HomeWork2.IMenu">
     <Position X="2" Y="0.5" Width="1.75" />
     <TypeIdentifier>
