@@ -51,7 +51,7 @@ namespace HomeWork2
 					if (dev != null)
 					{
 						dev.Off();
-						if (dev.DeviceState == EPowerState.Off)
+						if (dev.State == EPowerState.Off)
 						{
 							action = "выключено";
 						}

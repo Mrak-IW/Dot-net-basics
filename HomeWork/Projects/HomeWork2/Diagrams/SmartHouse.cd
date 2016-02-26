@@ -11,7 +11,7 @@
   <Class Name="HomeWork2.SmartDevice">
     <Position X="2.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAIBAABAEQAQAAAAEAAAEAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAABAABAEQAQAAAAEAAAEAAAABAAAAIA=</HashCode>
       <FileName>SmartHouse\SmartDevice.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -43,14 +43,14 @@
   <Class Name="HomeWork2.Clock">
     <Position X="5.25" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Clock.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SmartHouse\Clock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="HomeWork2.ISmartDevice">
     <Position X="2.25" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAIAAAAAEQAQAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <HashCode>AAAAAIAAAAAAAAAAAAAEQAQAAAAAAAAAAAAABAAAAIA=</HashCode>
       <FileName>SmartHouse\ISmartDevice.cs</FileName>
     </TypeIdentifier>
   </Interface>

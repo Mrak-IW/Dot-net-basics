@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuAddClock.cs" />
+    <Compile Include="Menu\MenuAddClock.cs" />
     <Compile Include="SmartHouse\Clock.cs" />
     <Compile Include="Menu\MenuRepare.cs" />
     <Compile Include="Menu\MenuTemperatureSet.cs" />

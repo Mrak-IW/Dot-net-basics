@@ -12,7 +12,7 @@ namespace HomeWork2
 		public override string ToString()
 		{
 			string result = null;
-			switch (DeviceState)
+			switch (State)
 			{
 				case EPowerState.On:
 					result = string.Format("{0}:\t{1}", Name, DateTime.Now.ToLongTimeString());

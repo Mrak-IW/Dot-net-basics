@@ -29,7 +29,7 @@ namespace HomeWork2
 			}
 		}
 
-		public virtual EPowerState DeviceState
+		public virtual EPowerState State
 		{
 			get
 			{
@@ -57,22 +57,22 @@ namespace HomeWork2
 
 		public virtual void Break()
 		{
-			DeviceState = EPowerState.Broken;
+			State = EPowerState.Broken;
 		}
 
 		public virtual void Off()
 		{
-			if (DeviceState != EPowerState.Broken)
+			if (State != EPowerState.Broken)
 			{
-				DeviceState = EPowerState.Off;
+				State = EPowerState.Off;
 			}
 		}
 
 		public virtual void On()
 		{
-			if (DeviceState != EPowerState.Broken)
+			if (State != EPowerState.Broken)
 			{
-				DeviceState = EPowerState.On;
+				State = EPowerState.On;
 			}
 		}
 	}

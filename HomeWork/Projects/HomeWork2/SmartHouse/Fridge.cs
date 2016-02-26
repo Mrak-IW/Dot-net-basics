@@ -61,9 +61,9 @@ namespace HomeWork2
 		public bool Repare()
 		{
 			bool result = false;
-			if (DeviceState == EPowerState.Broken)
+			if (State == EPowerState.Broken)
 			{
-				DeviceState = EPowerState.Off;
+				State = EPowerState.Off;
 				result = true;
 			}
 			return result;
@@ -72,7 +72,7 @@ namespace HomeWork2
 		public override string ToString()
 		{
 			string res = Name + ":\t";
-			switch (DeviceState)
+			switch (State)
 			{
 				case EPowerState.On:
 					string progress = new string('*', 10 * (dimmer.Max - Temperature) / (dimmer.Max - dimmer.Min));

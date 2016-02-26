@@ -34,7 +34,7 @@ namespace HomeWork2
 		{
 			get
 			{
-				return DeviceState == EPowerState.On ? dimmer.CurrentLevel : 0;
+				return State == EPowerState.On ? dimmer.CurrentLevel : 0;
 			}
 
 			set
@@ -56,7 +56,7 @@ namespace HomeWork2
 		public override string ToString()
 		{
 			string res = Name + ":\t";
-			switch (DeviceState)
+			switch (State)
 			{
 				case EPowerState.On:
 					string progress = new string('+', 10 * Brightness / BrightnessMax);

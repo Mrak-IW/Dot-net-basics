@@ -157,7 +157,7 @@
     <Position X="0.75" Y="17" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAgAAAAIAAAAAQAAAAEAAAAACAAQAAAAAA=</HashCode>
-      <FileName>MenuAddClock.cs</FileName>
+      <FileName>Menu\MenuAddClock.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="HomeWork2.IMenu">
