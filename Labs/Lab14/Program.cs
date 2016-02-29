@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using HomeWork2;
 
 namespace Lab14
 {
@@ -10,6 +9,7 @@ namespace Lab14
 	{
 		static void Main(string[] args)
 		{
+			Menu.Show();
 		}
 	}
 }
