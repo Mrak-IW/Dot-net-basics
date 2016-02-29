@@ -5,10 +5,11 @@ using System.Text;
 
 namespace HomeWork2
 {
-	public enum EPowerState
+	public interface IOpenCloseable
 	{
-		Off,
-		On,
-		Broken
+		bool Opened { get; set; }
+
+		void Open();
+		void Close();
 	}
 }
