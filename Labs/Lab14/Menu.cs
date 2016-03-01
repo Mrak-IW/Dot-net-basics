@@ -16,7 +16,7 @@ namespace Lab14
 		const string HOT = "+";
 		const string EXIT = "ex";
 
-		static Fridge fr = new Fridge("fridge", new Dimmer(0, -10, 1));
+		static Fridge fr = new Fridge("fridge", -5, -10, 0);
 
 		static public void Show()
 		{

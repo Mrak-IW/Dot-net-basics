@@ -7,20 +7,25 @@ namespace HomeWork2
 {
 	public class Fridge : SmartDevice, IHaveThermostat, IOpenCloseable, IRepareable
 	{
-		private IAdjustable<int> dimmer;
+		int temperature;
+		public virtual int TempMin { get; protected set; }
+		public virtual int TempMax { get; protected set; }
 
-		public Fridge(string name, IAdjustable<int> dimmer)
+		public Fridge(string name, int temp, int tempMax, int tempMin)
 			: base(name)
 		{
-			if (dimmer.Max > 10)
+			if (tempMax > 10)
 			{
-				throw new ArgumentOutOfRangeException(string.Format("dimmer.Max = {0}C", dimmer.Max), "Зачем нужен холодильник, который будет греть?");
+				throw new ArgumentOutOfRangeException(string.Format("dimmer.Max = {0}C", tempMax), "Зачем нужен холодильник, который будет греть?");
 			}
-			if (dimmer.Min < -273)
+			if (tempMin < -273)
 			{
-				throw new ArgumentOutOfRangeException(string.Format("dimmer.Min = {0}C", dimmer.Max), "За нарушение законов физики, программа приговорена к ексепшену");
+				throw new ArgumentOutOfRangeException(string.Format("dimmer.Min = {0}C", tempMin), "За нарушение законов физики, программа приговорена к ексепшену");
 			}
-			this.dimmer = dimmer;
+
+			this.TempMax = tempMax;
+			this.TempMin = tempMin;
+			this.Temperature = temp;
 		}
 
 		public virtual bool Opened { get; set; }
@@ -29,12 +34,15 @@ namespace HomeWork2
 		{
 			get
 			{
-				return dimmer.CurrentLevel;
+				return temperature;
 			}
 
 			set
 			{
-				dimmer.CurrentLevel = value;
+				if (value >= TempMin && value <= TempMax)
+				{
+					temperature = value;
+				}
 			}
 		}
 
@@ -45,12 +53,12 @@ namespace HomeWork2
 
 		public virtual void DecreaseTemperature()
 		{
-			dimmer.Decrease();
+			Temperature--;
 		}
 
 		public virtual void IncreaseTemperature()
 		{
-			dimmer.Increase();
+			Temperature++;
 		}
 
 		public virtual void Open()
@@ -75,8 +83,8 @@ namespace HomeWork2
 			switch (DeviceState)
 			{
 				case EPowerState.On:
-					string progress = new string('*', 10 * (dimmer.Max - Temperature) / (dimmer.Max - dimmer.Min));
-					progress = string.Format("[{2}|{0}{1}|{3}]", progress, new string(' ', 10 - progress.Length), dimmer.Min, dimmer.Max);
+					string progress = new string('*', 10 * (TempMax - Temperature) / (TempMax - TempMin));
+					progress = string.Format("[{2}|{0}{1}|{3}]", progress, new string(' ', 10 - progress.Length), TempMin, TempMax);
 
 					res = string.Format("{0}жужжит {1} {2}C", res, progress, Temperature);
 					break;

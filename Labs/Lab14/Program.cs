@@ -11,12 +11,12 @@ namespace Lab14
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine();
-			using (FileStream file = new FileStream("fridge.ini", FileMode.OpenOrCreate, FileAccess.ReadWrite))
-			{
-				FridgeFile fr = new FridgeFile("tmp", new Dimmer(0, -5, 1), file);
-				string param = fr.ReadField("test");
-			}
+			string fname = "fridge.ini";
+			FileInfo fi = new FileInfo(fname);
+			Console.WriteLine(fi.Exists ? "файл существует " + fi.Length + " байт" : "файл не найден");
+			FridgeFile fr = new FridgeFile("tmp", -5, 0, -10, fname);
+			//string param = fr.ReadField("Name");
+			fr.ReplaceField<string>("Name", "test");
 			Menu.Show();
 		}
 	}
