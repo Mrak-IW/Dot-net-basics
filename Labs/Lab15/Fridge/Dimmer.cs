@@ -5,6 +5,7 @@ using System.Text;
 
 namespace HomeWork2
 {
+	[Serializable]
 	public class Dimmer : IAdjustable<int>
 	{
 		private int currentLevel;

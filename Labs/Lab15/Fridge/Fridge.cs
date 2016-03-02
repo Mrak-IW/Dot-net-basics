@@ -5,6 +5,7 @@ using System.Text;
 
 namespace HomeWork2
 {
+	[Serializable]
 	public class Fridge : SmartDevice, IHaveThermostat, IOpenCloseable, IRepareable
 	{
 		private IAdjustable<int> dimmer;

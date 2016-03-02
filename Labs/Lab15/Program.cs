@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using HomeWork2;
+using Lab14;
 
 namespace Lab15
 {
@@ -19,6 +20,13 @@ namespace Lab15
 			{
 				default:
 					Console.WriteLine("Задание с таким номером не реализовано");
+					break;
+
+				case "1":
+					Console.WriteLine("Задание {0}:", taskNum);
+					{
+						Menu.Show();
+					}
 					break;
 
 				case "2":

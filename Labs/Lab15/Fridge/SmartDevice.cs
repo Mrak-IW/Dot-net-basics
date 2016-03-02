@@ -5,6 +5,7 @@ using System.Text;
 
 namespace HomeWork2
 {
+	[Serializable]
 	public abstract class SmartDevice : ISmartDevice
 	{
 		private string name;
