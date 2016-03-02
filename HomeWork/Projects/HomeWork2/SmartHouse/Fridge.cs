@@ -23,7 +23,7 @@ namespace HomeWork2
 			this.dimmer = dimmer;
 		}
 
-		public virtual bool Opened { get; set; }
+		public virtual bool IsOpened { get; set; }
 
 		public virtual int Temperature
 		{
@@ -56,7 +56,7 @@ namespace HomeWork2
 
 		public virtual void Close()
 		{
-			Opened = false;
+			IsOpened = false;
 		}
 
 		public virtual void DecreaseTemperature()
@@ -71,7 +71,7 @@ namespace HomeWork2
 
 		public virtual void Open()
 		{
-			Opened = true;
+			IsOpened = true;
 		}
 
 		public virtual bool Repare()
@@ -104,7 +104,7 @@ namespace HomeWork2
 					break;
 			}
 
-			res = res + (Opened ? " : открыт" : " : закрыт");
+			res = res + (IsOpened ? " : открыт" : " : закрыт");
 
 			return res;
 		}

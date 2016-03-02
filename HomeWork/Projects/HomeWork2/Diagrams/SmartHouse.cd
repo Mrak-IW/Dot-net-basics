@@ -35,7 +35,7 @@
   <Class Name="HomeWork2.Fridge">
     <Position X="3.25" Y="11.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAACAIAAEQAABIAAAEAACAAAAAAAAAACEAQA=</HashCode>
+      <HashCode>AAAAAAAAAACAIAAEQAABIAAAAAACEAAAAAAAAACEAQA=</HashCode>
       <FileName>SmartHouse\Fridge.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -65,7 +65,7 @@
   <Interface Name="HomeWork2.IOpenCloseable">
     <Position X="5.75" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAEAAAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAACAAAA=</HashCode>
       <FileName>SmartHouse\IOpenCloseable.cs</FileName>
     </TypeIdentifier>
   </Interface>

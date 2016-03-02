@@ -52,7 +52,7 @@ namespace HomeWork2
 					{
 						if (dev is IOpenCloseable)
 						{
-							if (!(dev as IOpenCloseable).Opened)
+							if (!(dev as IOpenCloseable).IsOpened)
 							{
 								action = "открылось";
 								(dev as IOpenCloseable).Open();

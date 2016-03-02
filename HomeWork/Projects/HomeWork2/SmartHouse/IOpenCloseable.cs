@@ -7,7 +7,7 @@ namespace HomeWork2
 {
 	public interface IOpenCloseable
 	{
-		bool Opened { get; set; }
+		bool IsOpened { get; set; }
 
 		void Open();
 		void Close();
