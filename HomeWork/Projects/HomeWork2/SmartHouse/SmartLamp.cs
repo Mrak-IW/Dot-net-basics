@@ -30,7 +30,7 @@ namespace HomeWork2
 			}
 		}
 
-		public int Brightness
+		public virtual int Brightness
 		{
 			get
 			{

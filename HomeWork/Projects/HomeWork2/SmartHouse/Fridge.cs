@@ -23,9 +23,9 @@ namespace HomeWork2
 			this.dimmer = dimmer;
 		}
 
-		public bool Opened { get; set; }
+		public virtual bool Opened { get; set; }
 
-		public int Temperature
+		public virtual int Temperature
 		{
 			get
 			{
@@ -38,27 +38,43 @@ namespace HomeWork2
 			}
 		}
 
-		public void Close()
+		public virtual int TempMax
+		{
+			get
+			{
+				return dimmer.Max;
+			}
+		}
+
+		public virtual int TempMin
+		{
+			get
+			{
+				return dimmer.Min;
+			}
+		}
+
+		public virtual void Close()
 		{
 			Opened = false;
 		}
 
-		public void DecreaseTemperature()
+		public virtual void DecreaseTemperature()
 		{
 			dimmer.Decrease();
 		}
 
-		public void IncreaseTemperature()
+		public virtual void IncreaseTemperature()
 		{
 			dimmer.Increase();
 		}
 
-		public void Open()
+		public virtual void Open()
 		{
 			Opened = true;
 		}
 
-		public bool Repare()
+		public virtual bool Repare()
 		{
 			bool result = false;
 			if (State == EPowerState.Broken)

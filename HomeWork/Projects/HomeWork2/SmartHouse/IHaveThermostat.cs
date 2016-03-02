@@ -8,6 +8,8 @@ namespace HomeWork2
 	public interface IHaveThermostat
 	{
 		int Temperature { get; set; }
+		int TempMax { get; }
+		int TempMin { get; }
 
 		void IncreaseTemperature();
 		void DecreaseTemperature();

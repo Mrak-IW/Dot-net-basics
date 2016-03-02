@@ -82,7 +82,7 @@ namespace HomeWork2
 			}
 			else
 			{
-				sm = submenus[submenuName];
+				sm = this[submenuName];
 				if (!sm.Call(sh, out output, Last(args, 1)))
 				{
 					if (output != null)
