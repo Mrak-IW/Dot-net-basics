@@ -16,7 +16,9 @@ namespace Lab14
 		const string HOT = "+";
 		const string EXIT = "ex";
 
-		static Fridge fr = new Fridge("fridge", -5, -10, 0);
+		const string fname = "fridge.ini";
+
+		static FridgeFile fr = new FridgeFile("fridge", -5, 0, -10, fname);
 
 		static public void Show()
 		{

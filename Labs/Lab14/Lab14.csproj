@@ -41,16 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fridge\Dimmer.cs" />
     <Compile Include="Fridge\EPowerState.cs" />
-    <Compile Include="Fridge\Fridge.cs" />
     <Compile Include="Fridge\FridgeFile.cs" />
-    <Compile Include="Fridge\IAdjustable.cs" />
     <Compile Include="Fridge\IHaveThermostat.cs" />
     <Compile Include="Fridge\IOpenCloseable.cs" />
-    <Compile Include="Fridge\IRepearable.cs" />
     <Compile Include="Fridge\ISmartDevice.cs" />
-    <Compile Include="Fridge\SmartDevice.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
