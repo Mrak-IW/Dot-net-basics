@@ -18,7 +18,7 @@ namespace HomeWork2
 			}
 			if (dimmer.Min < -273)
 			{
-				throw new ArgumentOutOfRangeException(string.Format("dimmer.Min = {0}C", dimmer.Max), "За нарушение законов физики, программа приговорена к ексепшену");
+				throw new ArgumentOutOfRangeException(string.Format("dimmer.Min = {0}C", dimmer.Min), "За нарушение законов физики, программа приговорена к ексепшену");
 			}
 			this.dimmer = dimmer;
 		}

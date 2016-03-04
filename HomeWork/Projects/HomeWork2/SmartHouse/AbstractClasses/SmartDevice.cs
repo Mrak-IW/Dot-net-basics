@@ -9,7 +9,6 @@ namespace HomeWork2
 	{
 		private string name;
 		private EPowerState state;
-		private static uint nextID = 0;
 		private ISmartHouse parent;
 
 		public SmartDevice(string name)

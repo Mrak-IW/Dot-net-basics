@@ -164,7 +164,7 @@
     <Position X="2" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAQAAAAAAgAIAACAAAQAQAARAAAAAAAAAAQAAgAAA=</HashCode>
-      <FileName>Menu\IMenu.cs</FileName>
+      <FileName>Menu\Interfaces\IMenu.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

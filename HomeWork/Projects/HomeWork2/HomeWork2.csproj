@@ -43,51 +43,52 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu\MenuAddClock.cs" />
-    <Compile Include="SmartHouse\Clock.cs" />
-    <Compile Include="Menu\MenuRepare.cs" />
-    <Compile Include="Menu\MenuTemperatureSet.cs" />
-    <Compile Include="Menu\MenuAddFridge.cs" />
-    <Compile Include="Menu\MenuClose.cs" />
-    <Compile Include="Menu\MenuTemperatureDecrease.cs" />
-    <Compile Include="Menu\MenuOpen.cs" />
-    <Compile Include="Menu\MenuTemperature.cs" />
-    <Compile Include="Menu\MenuTemperatureIncrease.cs" />
-    <Compile Include="SmartHouse\Fridge.cs" />
-    <Compile Include="Menu\MenuBrightnessDecrease.cs" />
-    <Compile Include="Menu\MenuBrightnessIncrease.cs" />
-    <Compile Include="Menu\MenuBrightnessSet.cs" />
-    <Compile Include="Menu\MenuBrightness.cs" />
-    <Compile Include="Menu\MenuBreak.cs" />
-    <Compile Include="Menu\MenuOff.cs" />
-    <Compile Include="Menu\MenuOn.cs" />
-    <Compile Include="Menu\MenuAddLamp.cs" />
-    <Compile Include="Menu\Menu.cs" />
-    <Compile Include="Menu\MenuAdd.cs" />
-    <Compile Include="Menu\IMenu.cs" />
+    <Compile Include="Menu\Commands\MenuAddClock.cs" />
+    <Compile Include="SmartHouse\Devices\Clock.cs" />
+    <Compile Include="Menu\Commands\MenuRepare.cs" />
+    <Compile Include="Menu\Commands\MenuTemperatureSet.cs" />
+    <Compile Include="Menu\Commands\MenuAddFridge.cs" />
+    <Compile Include="Menu\Commands\MenuClose.cs" />
+    <Compile Include="Menu\Commands\MenuTemperatureDecrease.cs" />
+    <Compile Include="Menu\Commands\MenuOpen.cs" />
+    <Compile Include="Menu\Commands\MenuTemperature.cs" />
+    <Compile Include="Menu\Commands\MenuTemperatureIncrease.cs" />
+    <Compile Include="SmartHouse\Devices\Fridge.cs" />
+    <Compile Include="Menu\Commands\MenuBrightnessDecrease.cs" />
+    <Compile Include="Menu\Commands\MenuBrightnessIncrease.cs" />
+    <Compile Include="Menu\Commands\MenuBrightnessSet.cs" />
+    <Compile Include="Menu\Commands\MenuBrightness.cs" />
+    <Compile Include="Menu\Commands\MenuBreak.cs" />
+    <Compile Include="Menu\Commands\MenuOff.cs" />
+    <Compile Include="Menu\Commands\MenuOn.cs" />
+    <Compile Include="Menu\Commands\MenuAddLamp.cs" />
+    <Compile Include="Menu\AbstractClasses\Menu.cs" />
+    <Compile Include="Menu\Commands\MenuAdd.cs" />
+    <Compile Include="Menu\Interfaces\IMenu.cs" />
     <Compile Include="Menu\CommandMenu.cs" />
-    <Compile Include="SmartHouse\Dimmer.cs" />
-    <Compile Include="SmartHouse\EPowerState.cs" />
-    <Compile Include="SmartHouse\IAdjustable.cs" />
-    <Compile Include="SmartHouse\ISmartDevice.cs" />
-    <Compile Include="SmartHouse\IHaveThermostat.cs" />
-    <Compile Include="SmartHouse\IHaveClock.cs" />
-    <Compile Include="SmartHouse\IBrightable.cs" />
-    <Compile Include="SmartHouse\IOpenCloseable.cs" />
-    <Compile Include="SmartHouse\IRepearable.cs" />
-    <Compile Include="SmartHouse\ISmartHouse.cs" />
+    <Compile Include="SmartHouse\Devices\InternalParts\Dimmer.cs" />
+    <Compile Include="SmartHouse\Enums\EPowerState.cs" />
+    <Compile Include="SmartHouse\Interfaces\IAdjustable.cs" />
+    <Compile Include="SmartHouse\Interfaces\ISmartDevice.cs" />
+    <Compile Include="SmartHouse\Interfaces\IHaveThermostat.cs" />
+    <Compile Include="SmartHouse\Interfaces\IHaveClock.cs" />
+    <Compile Include="SmartHouse\Interfaces\IBrightable.cs" />
+    <Compile Include="SmartHouse\Interfaces\IOpenCloseable.cs" />
+    <Compile Include="SmartHouse\Interfaces\IRepearable.cs" />
+    <Compile Include="SmartHouse\Interfaces\ISmartHouse.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Menu\MenuRemove.cs" />
-    <Compile Include="SmartHouse\SmartDevice.cs" />
+    <Compile Include="Menu\Commands\MenuRemove.cs" />
+    <Compile Include="SmartHouse\AbstractClasses\SmartDevice.cs" />
     <Compile Include="SmartHouse\SmartHouse.cs" />
-    <Compile Include="SmartHouse\SmartLamp.cs" />
+    <Compile Include="SmartHouse\Devices\SmartLamp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Diagrams\SmartHouse.cd" />
     <None Include="Diagrams\Menu.cd" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
