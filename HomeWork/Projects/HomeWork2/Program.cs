@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HomeWork2.Menus.Classes;
+using HomeWork2.Menus.Interfaces;
+using HomeWork2.SmartHouseDir.Interfaces;
+using HomeWork2.SmartHouseDir.Classes;
+using HomeWork2.SmartHouseDir.Classes.InternalParts;
 
 namespace HomeWork2
 {
