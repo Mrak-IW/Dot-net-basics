@@ -10,6 +10,7 @@ namespace HomeWork2.SmartHouseDir.Classes
 {
 	public class Fridge : SmartDevice, IHaveThermostat, IOpenCloseable, IRepareable
 	{
+		const string devType = "холодильник";
 		private IAdjustable<int> dimmer;
 
 		public Fridge(string name, IAdjustable<int> dimmer)
@@ -24,6 +25,14 @@ namespace HomeWork2.SmartHouseDir.Classes
 				throw new ArgumentOutOfRangeException(string.Format("dimmer.Min = {0}C", dimmer.Min), "За нарушение законов физики, программа приговорена к ексепшену");
 			}
 			this.dimmer = dimmer;
+		}
+
+		public override string DeviceType
+		{
+			get
+			{
+				return devType;
+			}
 		}
 
 		public virtual bool IsOpened { get; set; }
@@ -90,7 +99,7 @@ namespace HomeWork2.SmartHouseDir.Classes
 
 		public override string ToString()
 		{
-			string res = Name + ":\t";
+			string res = string.Format("{0}:\t{1} ", Name, DeviceType);
 			switch (State)
 			{
 				case EPowerState.On:

@@ -10,11 +10,21 @@ namespace HomeWork2.SmartHouseDir.Classes
 {
 	public class SmartLamp : SmartDevice, IBrightable
 	{
+		const string devType = "лампа";
 		IAdjustable<int> dimmer;
 
-		public SmartLamp(string name, IAdjustable<int> dimmer) : base(name)
+		public SmartLamp(string name, IAdjustable<int> dimmer)
+			: base(name)
 		{
 			this.dimmer = dimmer;
+		}
+
+		public override string DeviceType
+		{
+			get
+			{
+				return devType;
+			}
 		}
 
 		public virtual int BrightnessMax
@@ -58,7 +68,7 @@ namespace HomeWork2.SmartHouseDir.Classes
 
 		public override string ToString()
 		{
-			string res = Name + ":\t";
+			string res = string.Format("{0}:\t{1} ", Name, DeviceType);
 			switch (State)
 			{
 				case EPowerState.On:

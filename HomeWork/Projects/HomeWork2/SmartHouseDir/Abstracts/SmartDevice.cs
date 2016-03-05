@@ -76,5 +76,7 @@ namespace HomeWork2.SmartHouseDir.Abstracts
 				State = EPowerState.On;
 			}
 		}
+
+		public abstract string DeviceType { get; }
 	}
 }

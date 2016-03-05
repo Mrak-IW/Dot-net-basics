@@ -9,6 +9,7 @@ namespace HomeWork2.SmartHouseDir.Interfaces
 	public interface ISmartDevice
 	{
 		string Name { get; }
+		string DeviceType { get; }
 		EPowerState State { get; set; }
 		ISmartHouse Parent { get; set; }
 

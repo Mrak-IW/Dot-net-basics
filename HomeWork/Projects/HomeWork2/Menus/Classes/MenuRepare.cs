@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using HomeWork2.Menus.Abstracts;
 using HomeWork2.SmartHouseDir.Interfaces;
+using HomeWork2.SmartHouseDir.Enums;
+using HomeWork2.ExtensionClasses;
 
 namespace HomeWork2.Menus.Classes
 {
@@ -44,6 +46,7 @@ namespace HomeWork2.Menus.Classes
 			ISmartDevice dev;
 			IRepareable devOK;
 			string action;
+			string devtype = "Устройство";
 
 			if (args != null && args.Length > 0)
 			{
@@ -53,15 +56,24 @@ namespace HomeWork2.Menus.Classes
 
 					if (dev != null)
 					{
-						if (dev is IRepareable)
+						devtype = dev.DeviceType.ToUpperFirstLetter();
+						
+						if (dev.State == EPowerState.Broken)
 						{
-							devOK = dev as IRepareable;
-							devOK.Repare();
-							action = ": Вы подёргали какие-то проводки и протёрли всё тряпкой";
+							if (dev is IRepareable)
+							{
+								devOK = dev as IRepareable;
+								devOK.Repare();
+								action = ": Вы подёргали какие-то проводки и протёрли всё тряпкой";
+							}
+							else
+							{
+								action = "проще выкинуть";
+							}
 						}
 						else
 						{
-							action = "проще выкинуть";
+							action = "неплохо себя чувствует и без вас";
 						}
 					}
 					else
@@ -69,7 +81,7 @@ namespace HomeWork2.Menus.Classes
 						action = DEV_NOT_FOUND;
 					}
 
-					output = string.Format("{2} Устройство {0} {1}", args[i], action, (output != null ? output + "\n" : ""));
+					output = string.Format("{2} {3} {0} {1}", args[i], action, (output != null ? output + "\n" : ""), devtype);
 				}
 			}
 			else
