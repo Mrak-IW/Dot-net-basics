@@ -111,7 +111,7 @@ namespace Lab7
 							{
 								((Cat)a).Purr();
 							}
-							catch (Exception e)
+							catch (Exception)
 							{
 								Console.WriteLine("EXCEPTION - " + a.Name + " не кошка и не мурчит");
 							}

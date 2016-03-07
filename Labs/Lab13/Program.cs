@@ -63,7 +63,7 @@ namespace Lab13
 											{
 												((Cat)a).Purr();
 											}
-											catch (Exception e)
+											catch (Exception)
 											{
 												Console.WriteLine("EXCEPTION - " + a.Name + " не кошка и не мурчит");
 											}
@@ -96,7 +96,7 @@ namespace Lab13
 											{
 												((Cat)a).Purr();
 											}
-											catch (Exception e)
+											catch (Exception)
 											{
 												Console.WriteLine("EXCEPTION - " + a.Name + " не кошка и не мурчит");
 											}
@@ -129,7 +129,7 @@ namespace Lab13
 											{
 												((Cat)a).Purr();
 											}
-											catch (Exception e)
+											catch (Exception)
 											{
 												Console.WriteLine("EXCEPTION - " + a.Name + " не кошка и не мурчит");
 											}
@@ -162,7 +162,7 @@ namespace Lab13
 											{
 												((Cat)a).Purr();
 											}
-											catch (Exception e)
+											catch (Exception)
 											{
 												Console.WriteLine("EXCEPTION - " + a.Name + " не кошка и не мурчит");
 											}
