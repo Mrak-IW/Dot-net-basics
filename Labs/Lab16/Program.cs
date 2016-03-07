@@ -6,6 +6,7 @@ using System.Reflection;
 
 namespace Lab16
 {
+	[AuthorName("Mrak")]
 	class Program
 	{
 		static void Main(string[] args)
@@ -34,7 +35,7 @@ namespace Lab16
 
 						Type type = a.GetType("ReflectionTask.Square");
 						MethodInfo method = type.GetMethod("set_Side");
-						object instance = Activator.CreateInstance(type, 10);	//Похоже, конструктор с параметрвми не работает
+						object instance = Activator.CreateInstance(type, 10);	//Похоже, конструктор с параметрвми не работает. UPD: теперь работает
 						method.Invoke(instance, new object[] { 20 });
 
 						//Получение одного из перегруженных методов (без параметров)
@@ -49,6 +50,17 @@ namespace Lab16
 
 						FieldInfo field = type.GetField("figeType");
 						Console.WriteLine("figeType = {0}", field.GetValue(instance));
+					}
+					break;
+				case "2":
+					Console.WriteLine("Задание {0}:", taskNum);
+					{
+						Type t = Type.GetType("Lab16.Program");
+						object[] attrs = t.GetCustomAttributes(false);
+						foreach (AuthorNameAttribute a in attrs)
+						{
+							Console.WriteLine("Автор кода: {0}", a.Name);
+						}
 					}
 					break;
 			}
