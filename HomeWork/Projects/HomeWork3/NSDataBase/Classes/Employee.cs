@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using NSDataBase.Interfaces;
 using HomeWork3.FormattedOutput.Interfaces;
+using System.Runtime.Serialization;
 
 namespace HomeWork3.NSDataBase.Classes
 {
 	[Serializable]
-	public class Employee : IEmployee, ISymbolTableReady
+	public class Employee : IEmployee, ISymbolTableReady/*, ISerializable*/
 	{
 		public static int nextID = 0;
 
@@ -23,11 +24,21 @@ namespace HomeWork3.NSDataBase.Classes
 		}
 
 		public Employee(string name, string surname, string position)
-			:this()
+			: this()
 		{
 			Name = name;
 			Surname = surname;
 			Position = position;
+		}
+
+		/// <summary>
+		/// Конструктор десериализации
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
+		public Employee(SerializationInfo info, StreamingContext context)
+		{
+			Employee.nextID = info.GetInt32("static.nextID");
 		}
 
 		public string[] ToStringArray()
@@ -45,6 +56,17 @@ namespace HomeWork3.NSDataBase.Classes
 		public override string ToString()
 		{
 			return string.Format("{0:D3}: {1} {2} - {3}", ID, Name, Surname, Position);
+		}
+
+		/// <summary>
+		/// Метод, где можно принудительно сериализовать статические поля
+		/// </summary>
+		/// <param name="info"></param>
+		/// <param name="context"></param>
+		public void GetObjectData(SerializationInfo info, StreamingContext context)
+		{
+			//Данный метод нуждается в дальнейшем изучении. Пока не работает так, как хотелось-бы
+			info.AddValue("static.nextID", Employee.nextID, typeof(int));
 		}
 	}
 }

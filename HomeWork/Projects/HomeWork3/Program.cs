@@ -16,21 +16,18 @@ namespace HomeWork3
 {
 	class Program
 	{
-		//const string fnameBin = "db.bin";
-		//const string fnameXml = "db.xml";
 		const string configFileName = "settings.ini";
 
 		static void Main(string[] args)
 		{
 			List<Employee> dataBase;
-			string saveFileName/* = fnameBin*/;
 
-			dataBase = Load(configFileName, out saveFileName);
-			//dataBase = LoadBin(fnameBin);
+			dataBase = Load(configFileName);
 
-			//dataBase.Add(new Employee("Угон", "Камазов", "Говнюк"));
+			//dataBase.Add(new Employee("Угон", "Камазов", "Сторож"));
 			//dataBase.Add(new Employee("Рулон", "Обоев", "Космонавт"));
 			//dataBase.Add(new Employee("Бидон", "Помоев", "Ловец зелёных зайцев"));
+			
 			Console.WriteLine("Для продолжения нажмите любую клавишу");
 			Console.ReadKey();
 			Console.Write("\b");
@@ -52,16 +49,16 @@ namespace HomeWork3
 
 			menu.Show();
 
-			Save(dataBase, saveFileName);
-			//SaveBin(fnameBin,dataBase);
+			Save(dataBase);
 		}
 
-		static List<Employee> Load(string configFileName, out string dbFileName)
+		static List<Employee> Load(string configFileName)
 		{
 			List<Employee> dataBase = null;
 			string output = null;
+			string dbFileName;
 
-			dbFileName = ReadField(configFileName, "fileName");
+			dbFileName = ReadField(configFileName, "inFileName");
 			if (dbFileName != null)
 			{
 				string[] split = dbFileName.Split('.');
@@ -116,11 +113,14 @@ namespace HomeWork3
 			}
 			//Восстановим значение статического поля Employee.nextID в логически приемлемое значение
 			//Кстати, а можно сериализовать статические члены класса?
-			foreach (Employee e in dataBase)
+			if (dataBase != null)
 			{
-				if (e.ID >= Employee.nextID)
+				foreach (Employee e in dataBase)
 				{
-					Employee.nextID = e.ID + 1;
+					if (e.ID >= Employee.nextID)
+					{
+						Employee.nextID = e.ID + 1;
+					}
 				}
 			}
 			return dataBase;
@@ -147,8 +147,12 @@ namespace HomeWork3
 			return dataBase;
 		}
 
-		static void Save(object obj, string saveFileName)
+		static void Save(object obj)
 		{
+			string saveFileName;
+			saveFileName = ReadField(configFileName, "outFileName");
+			string output = string.Format("Данные сохранены в файл {0}", saveFileName);
+
 			if (saveFileName != null)
 			{
 				string[] split = saveFileName.Split('.');
@@ -162,9 +166,22 @@ namespace HomeWork3
 						case "xml":
 							SaveXml(saveFileName, obj);
 							break;
+						default:
+							output = string.Format("Файл \"{0}\" имеет неизвестный формат. Данные не сохранены.", saveFileName);
+							break;
 					}
 				}
+				else
+				{
+					output = string.Format("Файл \"{0}\" имеет неизвестный формат. Данные не сохранены.", saveFileName);
+				}
 			}
+			else
+			{
+				output = string.Format("Файл \"{0}\" не содержит имени файла для сохранения. Данные не сохранены.", configFileName);
+			}
+
+			Console.WriteLine(output);
 		}
 
 		static void SaveBin(string fileName, object obj)

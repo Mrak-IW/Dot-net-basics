@@ -4,7 +4,7 @@
     <ID>0</ID>
     <Name>Угон</Name>
     <Surname>Камазов</Surname>
-    <Position>Говнюк</Position>
+    <Position>Сторож</Position>
   </Employee>
   <Employee>
     <ID>1</ID>
@@ -21,7 +21,7 @@
   <Employee>
     <ID>3</ID>
     <Name>XML</Name>
-    <Surname>Forever</Surname>
+    <Surname>Serializer</Surname>
     <Position>Менеджер_по_сериализации</Position>
   </Employee>
 </ArrayOfEmployee>
