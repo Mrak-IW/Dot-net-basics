@@ -8,13 +8,13 @@ using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	public class MenuAddEployee : Menu<List<IEmployee>>
+	public class MenuAddEployee : Menu<List<Employee>>
 	{
 		const int argsCount = 3;
 		const string usageHelp = "<Имя> <Фамилия> <Должность>";
 		const string description = "Добавление рядового сотрудника в базу";
 
-		public MenuAddEployee(List<IEmployee> dataBase, string cmdName)
+		public MenuAddEployee(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 

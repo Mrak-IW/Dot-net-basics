@@ -5,15 +5,16 @@ using System.Text;
 using NSDataBase.Interfaces;
 using Menus.Abstracts;
 using HomeWork3.FormattedOutput.Classes;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	public class DBCommandMenu : CommandMenu<List<IEmployee>>
+	public class DBCommandMenu : CommandMenu<List<Employee>>
 	{
 		const string description = "Управление БД";
 		const string usageHelp = "<команда> [аргументы команды]\n\n" + EXIT + "\tвыход";
 
-		public DBCommandMenu(List<IEmployee> dataBase, string cmdName)
+		public DBCommandMenu(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 

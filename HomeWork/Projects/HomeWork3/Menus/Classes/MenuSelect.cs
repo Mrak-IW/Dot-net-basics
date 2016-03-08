@@ -5,15 +5,16 @@ using System.Text;
 using NSDataBase.Interfaces;
 using Menus.Abstracts;
 using HomeWork3.FormattedOutput.Classes;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	public class MenuSelect : Menu<List<IEmployee>>
+	public class MenuSelect : Menu<List<Employee>>
 	{
 		const string usageHelp = "<ID_записи [ ID_2 .. [ ID_N]] | селектор>\n\nДоступные селекторы:";
 		const string description = "Просмотр данных из базы";
 
-		public MenuSelect(List<IEmployee> dataBase, string cmdName)
+		public MenuSelect(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 
@@ -44,13 +45,13 @@ namespace HomeWork3.Menus.Classes
 				{
 					int id;
 					SymbolTable st = new SymbolTable("ID", "Имя", "Фамилия", "Должность");
-					List<IEmployee> lst = new List<IEmployee>();
+					List<Employee> lst = new List<Employee>();
 
 					for (int i = 0; i < args.Length; i++)
 					{
 						if (int.TryParse(args[i], out id))
 						{
-							IEmployee item = OperatedObject.Find(x => x.ID == id);
+							Employee item = OperatedObject.Find(x => x.ID == id);
 							if (item != null)
 							{
 								lst.Add(item);

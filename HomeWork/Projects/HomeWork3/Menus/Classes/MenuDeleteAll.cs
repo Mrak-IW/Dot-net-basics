@@ -5,15 +5,16 @@ using System.Text;
 using Menus.Abstracts;
 using NSDataBase.Interfaces;
 using HomeWork3.FormattedOutput.Classes;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	class MenuDeleteAll : Menu<List<IEmployee>>
+	class MenuDeleteAll : Menu<List<Employee>>
 	{
 		const string usageHelp = "< без параметров >";
 		const string description = "Очистить всю базу целиком";
 
-		public MenuDeleteAll(List<IEmployee> dataBase, string cmdName)
+		public MenuDeleteAll(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 

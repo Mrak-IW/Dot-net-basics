@@ -12,7 +12,7 @@ namespace HomeWork3.NSDataBase.Classes
 	{
 		static int nextID = 0;
 
-		public int ID { get; protected set; }
+		public int ID { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public string Position { get; set; }

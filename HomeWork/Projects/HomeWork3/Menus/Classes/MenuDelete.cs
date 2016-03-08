@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using Menus.Abstracts;
 using NSDataBase.Interfaces;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	class MenuDelete : Menu<List<IEmployee>>
+	class MenuDelete : Menu<List<Employee>>
 	{
 		const string usageHelp = "<ID_сущности | селектор>\n\nДоступные селекторы:";
 		const string description = "Удаление сущностей из базы";
 
-		public MenuDelete(List<IEmployee> dataBase, string cmdName)
+		public MenuDelete(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 
@@ -51,7 +52,7 @@ namespace HomeWork3.Menus.Classes
 						buf = null;
 						if (int.TryParse(args[i], out id))
 						{
-							IEmployee item = OperatedObject.Find(x => x.ID == id);
+							Employee item = OperatedObject.Find(x => x.ID == id);
 							if (item != null)
 							{
 								OperatedObject.Remove(item);

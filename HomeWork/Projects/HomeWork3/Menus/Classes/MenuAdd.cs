@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using Menus.Abstracts;
 using NSDataBase.Interfaces;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	public class MenuAdd : Menu<List<IEmployee>>
+	public class MenuAdd : Menu<List<Employee>>
 	{
 		const string usageHelp = "<тип_сущности> [специфические параметры сущности]\n\nТипы сущностей:";
 		const string description = "Добавление сущностей в базу";
 
-		public MenuAdd(List<IEmployee> dataBase, string cmdName)
+		public MenuAdd(List<Employee> dataBase, string cmdName)
 			:base(dataBase, cmdName)
 		{ }
 

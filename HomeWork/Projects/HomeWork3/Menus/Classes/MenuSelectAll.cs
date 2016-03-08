@@ -5,15 +5,16 @@ using System.Text;
 using NSDataBase.Interfaces;
 using Menus.Abstracts;
 using HomeWork3.FormattedOutput.Classes;
+using HomeWork3.NSDataBase.Classes;
 
 namespace HomeWork3.Menus.Classes
 {
-	class MenuSelectAll : Menu<List<IEmployee>>
+	class MenuSelectAll : Menu<List<Employee>>
 	{
 		const string usageHelp = "< без параметров >";
 		const string description = "Просмотреть всю базу целиком";
 
-		public MenuSelectAll(List<IEmployee> dataBase, string cmdName)
+		public MenuSelectAll(List<Employee> dataBase, string cmdName)
 			: base(dataBase, cmdName)
 		{ }
 
@@ -41,7 +42,7 @@ namespace HomeWork3.Menus.Classes
 			if (args == null || args.Length == 0)
 			{
 				SymbolTable st = new SymbolTable("ID", "Имя", "Фамилия", "Должность");
-				List<IEmployee> lst = new List<IEmployee>();
+				List<Employee> lst = new List<Employee>();
 				output = st.CreateTable(OperatedObject);
 			}
 			else
