@@ -6,6 +6,9 @@ using NSDataBase.Interfaces;
 using Menus.Interfaces;
 using HomeWork3.Menus.Classes;
 
+using HomeWork3.FormattedOutput.Classes;
+using HomeWork3.NSDataBase.Classes;
+
 namespace HomeWork3
 {
 	class Program
@@ -13,6 +16,10 @@ namespace HomeWork3
 		static void Main(string[] args)
 		{
 			List<IEmployee> dataBase = new List<IEmployee>();
+			dataBase.Add(new Employee("Угон", "Камазов", "Говнюк"));
+			dataBase.Add(new Employee("Рулон", "Обоев", "Космонавт"));
+			dataBase.Add(new Employee("Бидон", "Помоев", "Алкоголик со стажем"));
+
 			DBCommandMenu menu = new DBCommandMenu(dataBase, "db>");
 
 			IMenu<List<IEmployee>> add = new MenuAdd(dataBase, "add");

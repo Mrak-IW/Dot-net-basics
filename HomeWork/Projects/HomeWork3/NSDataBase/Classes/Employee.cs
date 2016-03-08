@@ -32,7 +32,7 @@ namespace HomeWork3.NSDataBase.Classes
 
 		public string[] ToStringArray()
 		{
-			string[] arr = new string[3];
+			string[] arr = new string[4];
 
 			arr[0] = ID.ToString();
 			arr[1] = Name;
