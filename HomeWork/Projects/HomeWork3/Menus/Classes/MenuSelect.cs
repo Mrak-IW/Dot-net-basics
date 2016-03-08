@@ -10,7 +10,7 @@ namespace HomeWork3.Menus.Classes
 {
 	public class MenuSelect : Menu<List<IEmployee>>
 	{
-		const string usageHelp = "<ID_записи | селектор>\n\nДоступные селекторы:";
+		const string usageHelp = "<ID_записи [ ID_2 .. [ ID_N]] | селектор>\n\nДоступные селекторы:";
 		const string description = "Просмотр данных из базы";
 
 		public MenuSelect(List<IEmployee> dataBase, string cmdName)
