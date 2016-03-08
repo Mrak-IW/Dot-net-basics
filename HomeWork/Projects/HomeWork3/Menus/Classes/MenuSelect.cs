@@ -37,10 +37,11 @@ namespace HomeWork3.Menus.Classes
 		public override EMenuOutput Call(out string output, params string[] args)
 		{
 			EMenuOutput result = EMenuOutput.Success;
-			output = null;
+			string buf;
 
 			if (base.Call(out output, args) != EMenuOutput.Success)
 			{
+				output = null;
 				if (args != null && args.Length >= 1)
 				{
 					int id;
@@ -49,6 +50,7 @@ namespace HomeWork3.Menus.Classes
 
 					for (int i = 0; i < args.Length; i++)
 					{
+						buf = null;
 						if (int.TryParse(args[i], out id))
 						{
 							Employee item = OperatedObject.Find(x => x.ID == id);
@@ -59,15 +61,25 @@ namespace HomeWork3.Menus.Classes
 							else
 							{
 								result = EMenuOutput.ParamOutOfRange;
-								output = string.Format("Запись с ключом {0} отсутствует в базе", id);
-								break;
+								buf = string.Format("Запись с ключом {0} отсутствует в базе", args[i]);
 							}
 						}
 						else
 						{
 							result = EMenuOutput.InvalidParamFormat;
-							output = string.Format("Невозможно преобразовать строку {0} в целое число", args[0]);
-							break;
+							buf = string.Format("Невозможно преобразовать строку {0} в целое число", args[i]);
+						}
+
+						if (buf != null)
+						{
+							if (output != null)
+							{
+								output = string.Join("\n", output, buf);
+							}
+							else
+							{
+								output = buf;
+							}
 						}
 					}
 

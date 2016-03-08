@@ -10,7 +10,7 @@ namespace HomeWork3.Menus.Classes
 {
 	class MenuDelete : Menu<List<Employee>>
 	{
-		const string usageHelp = "<ID_сущности | селектор>\n\nДоступные селекторы:";
+		const string usageHelp = "<ID_сущности [ ID_2 .. [ ID_N]] | селектор>\n\nДоступные селекторы:";
 		const string description = "Удаление сущностей из базы";
 
 		public MenuDelete(List<Employee> dataBase, string cmdName)
@@ -67,7 +67,7 @@ namespace HomeWork3.Menus.Classes
 						else
 						{
 							result = EMenuOutput.InvalidParamFormat;
-							buf = string.Format("Невозможно преобразовать строку {0} в целое число", args[0]);
+							buf = string.Format("Невозможно преобразовать строку {0} в целое число", args[i]);
 						}
 
 						if (buf != null)
