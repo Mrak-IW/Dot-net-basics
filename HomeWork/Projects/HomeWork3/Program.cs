@@ -31,6 +31,9 @@ namespace HomeWork3
 			//dataBase.Add(new Employee("Угон", "Камазов", "Говнюк"));
 			//dataBase.Add(new Employee("Рулон", "Обоев", "Космонавт"));
 			//dataBase.Add(new Employee("Бидон", "Помоев", "Ловец зелёных зайцев"));
+			Console.WriteLine("Для продолжения нажмите любую клавишу");
+			Console.ReadKey();
+			Console.Write("\b");
 
 			DBCommandMenu menu = new DBCommandMenu(dataBase, "db>");
 
@@ -56,6 +59,7 @@ namespace HomeWork3
 		static List<Employee> Load(string configFileName, out string dbFileName)
 		{
 			List<Employee> dataBase = null;
+			string output = null;
 
 			dbFileName = ReadField(configFileName, "fileName");
 			if (dbFileName != null)
@@ -81,7 +85,14 @@ namespace HomeWork3
 			if (dataBase == null)
 			{
 				dataBase = new List<Employee>();
+				output = string.Format("Загрузка из файла {0} невозможна. База данных будет создана заново.", dbFileName);
 			}
+			else
+			{
+				output = "Данные успешно загружены из файла " + dbFileName;
+			}
+			Console.WriteLine(output);
+			Console.WriteLine();
 
 			return dataBase;
 		}
@@ -103,7 +114,15 @@ namespace HomeWork3
 					catch (Exception) { }
 				}
 			}
-
+			//Восстановим значение статического поля Employee.nextID в логически приемлемое значение
+			//Кстати, а можно сериализовать статические члены класса?
+			foreach (Employee e in dataBase)
+			{
+				if (e.ID >= Employee.nextID)
+				{
+					Employee.nextID = e.ID + 1;
+				}
+			}
 			return dataBase;
 		}
 

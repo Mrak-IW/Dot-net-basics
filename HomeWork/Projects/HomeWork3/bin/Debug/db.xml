@@ -18,4 +18,10 @@
     <Surname>Помоев</Surname>
     <Position>Ловец зелёных зайцев</Position>
   </Employee>
+  <Employee>
+    <ID>3</ID>
+    <Name>XML</Name>
+    <Surname>Forever</Surname>
+    <Position>Менеджер_по_сериализации</Position>
+  </Employee>
 </ArrayOfEmployee>
