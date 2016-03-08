@@ -4,26 +4,18 @@ using System.Linq;
 using System.Text;
 using NSDataBase.Interfaces;
 using Menus.Abstracts;
+using HomeWork3.FormattedOutput.Classes;
 
-namespace Menus.Classes
+namespace HomeWork3.Menus.Classes
 {
 	public class DBCommandMenu : CommandMenu<List<IEmployee>>
 	{
 		const string description = "Управление БД";
 		const string usageHelp = "<команда> [аргументы команды]\n\n" + EXIT + "\tвыход";
-		const string name = "db>";
 
-		public DBCommandMenu(List<IEmployee> dataBase)
-			: base(dataBase)
+		public DBCommandMenu(List<IEmployee> dataBase, string cmdName)
+			: base(dataBase, cmdName)
 		{ }
-
-		public override string Name
-		{
-			get
-			{
-				return name;
-			}
-		}
 
 		public override string Description
 		{
@@ -43,7 +35,9 @@ namespace Menus.Classes
 
 		public override void ShowState()
 		{
-			Console.WriteLine("Записей в базе: {0}");
+			Console.WriteLine("Записей в базе: {0}", OperatedObject.Count);
+			//SymbolTable st = new SymbolTable("Имя", "Фамилия", "Должность");
+			//Console.WriteLine(st.CreateTable(OperatedObject));
 		}
 	}
 }

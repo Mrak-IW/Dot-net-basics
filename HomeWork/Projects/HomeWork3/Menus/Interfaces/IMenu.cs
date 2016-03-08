@@ -7,7 +7,7 @@ namespace Menus.Interfaces
 {
 	public interface IMenu<T>
 	{
-		bool Call(out string output, params string[] args);
+		EMenuOutput Call(out string output, params string[] args);
 
 		IMenu<T> this[string submenuName] { get; }
 

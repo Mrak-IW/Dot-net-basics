@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NSDataBase.Interfaces;
-//using HomeWork2.SmartHouseDir.Interfaces;
 
 namespace Menus.Abstracts
 {
-	public abstract class CommandMenu<T> : Menu<T>
+	public abstract class CommandMenu<T> : Menu<T>, IMainMenu
 	{
 		/// <summary>
 		/// Показать текущее состояние управляемого объекта
 		/// </summary>
 		public abstract void ShowState();
 
-		public CommandMenu(T operatedObject)
-			: base(operatedObject)
+		public CommandMenu(T operatedObject, string cmdName)
+			: base(operatedObject, cmdName)
 		{ }
 
 		public virtual void Show()
@@ -24,7 +23,7 @@ namespace Menus.Abstracts
 
 			string ans = null;
 			string output = null;
-			bool result = true;
+			EMenuOutput result = EMenuOutput.Success;
 			string[] args;
 			string cmd;
 			while (true)
@@ -53,7 +52,7 @@ namespace Menus.Abstracts
 				}
 
 				result = Call(out output, args);
-				if (!result)
+				if (result != EMenuOutput.Success)
 				{
 					if (output != null)
 					{

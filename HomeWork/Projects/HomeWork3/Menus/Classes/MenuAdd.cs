@@ -5,25 +5,16 @@ using System.Text;
 using Menus.Abstracts;
 using NSDataBase.Interfaces;
 
-namespace Menus.Classes
+namespace HomeWork3.Menus.Classes
 {
 	public class MenuAdd : Menu<List<IEmployee>>
 	{
-		const string usageHelp = "<тип_устройства> <имя_устройства> [специфические параметры устройства]\n\nТипы устройств:";
-		const string description = "Добавление устройств в систему";
-		const string name = "add";
+		const string usageHelp = "<тип_сущности> [специфические параметры сущности]\n\nТипы сущностей:";
+		const string description = "Добавление сущностей в базу";
 
-		public MenuAdd(List<IEmployee> dataBase)
-			:base(dataBase)
+		public MenuAdd(List<IEmployee> dataBase, string cmdName)
+			:base(dataBase, cmdName)
 		{ }
-
-		public override string Name
-		{
-			get
-			{
-				return name;
-			}
-		}
 
 		public override string UsageHelpShort
 		{

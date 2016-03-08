@@ -18,12 +18,14 @@ namespace Menus.Abstracts
 
 		public abstract string Description { get; }
 		public abstract string UsageHelpShort { get; }
-		public abstract string Name { get; }
 
-		public Menu(T operatedObject)
+		public Menu(T operatedObject, string cmdName)
 		{
 			this.OperatedObject = operatedObject;
+			Name = cmdName;
 		}
+
+		public virtual string Name { get; protected set; }
 
 		public virtual string UsageHelp
 		{
@@ -68,42 +70,42 @@ namespace Menus.Abstracts
 			}
 		}
 
-		public virtual bool Call(out string output, params string[] args)
+		public virtual EMenuOutput Call(out string output, params string[] args)
 		{
 			output = null;
+			EMenuOutput result = EMenuOutput.Success;
 
 			if (args == null || args.Length == 0)
 			{
 				output = MISSING_ARGS + Name;
-				return false;
-			}
-
-			bool result = true;
-			string submenuName = args[0];
-
-			IMenu<T> sm;
-			if (!ContainsSubmenu(submenuName))
-			{
-				output = string.Format("{0} не обладает вложенной командой {1}", Name, submenuName);
-				result = false;
+				result = EMenuOutput.InvalidParamsCount;
 			}
 			else
 			{
-				sm = this[submenuName];
-				if (!sm.Call(out output, Last(args, 1)))
+				string submenuName = args[0];
+
+				IMenu<T> sm;
+				if (!ContainsSubmenu(submenuName))
 				{
-					if (output != null)
+					output = string.Format("{0} не обладает вложенной командой {1}", Name, submenuName);
+					result = EMenuOutput.CantFindSubmenu;
+				}
+				else
+				{
+					sm = this[submenuName];
+					if (sm.Call(out output, Last(args, 1)) != EMenuOutput.Success)
 					{
-						output = string.Join("\n\n", output, sm.UsageHelp);
+						if (output != null)
+						{
+							output = string.Join("\n\n", output, sm.UsageHelp);
+						}
+						else
+						{
+							output = sm.UsageHelp;
+						}
 					}
-					else
-					{
-						output = sm.UsageHelp;
-					}
-					result = true;
 				}
 			}
-
 			return result;
 		}
 

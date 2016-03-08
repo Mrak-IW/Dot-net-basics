@@ -8,7 +8,7 @@
     <ProjectGuid>{B3871316-A400-4106-8AAC-4830DB4AC6CD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HomeWrok3</RootNamespace>
+    <RootNamespace>HomeWork3</RootNamespace>
     <AssemblyName>HomeWrok3</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -43,19 +43,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormattedOutput\SymbolTable.cs" />
+    <Compile Include="FormattedOutput\Classes\SymbolTable.cs" />
+    <Compile Include="FormattedOutput\Interfaces\ISymbolTableReady.cs" />
+    <Compile Include="Menus\Classes\MenuAddEployee.cs" />
+    <Compile Include="Menus\Classes\MenuDelete.cs" />
+    <Compile Include="Menus\Classes\MenuDeleteAll.cs" />
+    <Compile Include="Menus\Classes\MenuSelect.cs" />
+    <Compile Include="Menus\Classes\MenuSelectAll.cs" />
+    <Compile Include="Menus\Enums\EMenuOutput.cs" />
+    <Compile Include="Menus\Interfaces\IMainMenu.cs" />
     <Compile Include="Menus\Classes\DBCommandMenu.cs" />
     <Compile Include="NSDataBase\Classes\Employee.cs" />
     <Compile Include="NSDataBase\Interfaces\IEmployee.cs" />
     <Compile Include="Menus\Abstracts\Menu.cs" />
     <Compile Include="Menus\Abstracts\CommandMenu.cs" />
     <Compile Include="Menus\Classes\MenuAdd.cs" />
-    <Compile Include="Menus\Interfaces\IMenuGeneric.cs" />
+    <Compile Include="Menus\Interfaces\IMenu.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Diagrams\DataBase.cd" />
+    <None Include="Diagrams\Menu.cd" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="NSDataBase\Abstracts\" />
