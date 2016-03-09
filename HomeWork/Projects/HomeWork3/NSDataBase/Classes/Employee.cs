@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 namespace HomeWork3.NSDataBase.Classes
 {
 	[Serializable]
-	public class Employee : IEmployee, ISymbolTableReady/*, ISerializable*/
+	public class Employee : IEmployee, ISymbolTableReady, ISerializable
 	{
 		public static int nextID = 0;
 
@@ -31,14 +31,17 @@ namespace HomeWork3.NSDataBase.Classes
 			Position = position;
 		}
 
+
 		/// <summary>
 		/// Конструктор десериализации
 		/// </summary>
-		/// <param name="info"></param>
-		/// <param name="context"></param>
 		public Employee(SerializationInfo info, StreamingContext context)
 		{
 			Employee.nextID = info.GetInt32("static.nextID");
+			ID = info.GetInt32("ID");
+			Name = info.GetString("Name");
+			Surname = info.GetString("Surname");
+			Position = info.GetString("Position");
 		}
 
 		public string[] ToStringArray()
@@ -61,12 +64,14 @@ namespace HomeWork3.NSDataBase.Classes
 		/// <summary>
 		/// Метод, где можно принудительно сериализовать статические поля
 		/// </summary>
-		/// <param name="info"></param>
-		/// <param name="context"></param>
 		public void GetObjectData(SerializationInfo info, StreamingContext context)
 		{
-			//Данный метод нуждается в дальнейшем изучении. Пока не работает так, как хотелось-бы
-			info.AddValue("static.nextID", Employee.nextID, typeof(int));
+			//Ну да. Теперь в каждой записи для объекта этого типа будет храниться одно и то-же значение для статического поля. Ну и флаг ему в байты.
+			info.AddValue("static.nextID", Employee.nextID, nextID.GetType());
+			info.AddValue("ID", ID, ID.GetType());
+			info.AddValue("Name", Name, Name.GetType());
+			info.AddValue("Surname", Surname, Surname.GetType());
+			info.AddValue("Position", Position, Position.GetType());
 		}
 	}
 }

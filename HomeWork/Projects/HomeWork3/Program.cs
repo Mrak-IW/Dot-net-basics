@@ -113,7 +113,8 @@ namespace HomeWork3
 			}
 			//Восстановим значение статического поля Employee.nextID в логически приемлемое значение
 			//Кстати, а можно сериализовать статические члены класса?
-			if (dataBase != null)
+			//UPD: Данный костыль больше не нужен, посколько заменён костылём с управляемой сериализацией. Но пусть остаётся. На память.
+			/*if (dataBase != null)
 			{
 				foreach (Employee e in dataBase)
 				{
@@ -122,7 +123,7 @@ namespace HomeWork3
 						Employee.nextID = e.ID + 1;
 					}
 				}
-			}
+			}*/
 			return dataBase;
 		}
 
