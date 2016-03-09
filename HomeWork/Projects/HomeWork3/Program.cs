@@ -187,6 +187,12 @@ namespace HomeWork3
 
 		static void SaveBin(string fileName, object obj)
 		{
+			FileInfo fi = new FileInfo(fileName);
+			if (fi.Exists)
+			{
+				fi.Delete();
+			}
+
 			BinaryFormatter bf = new BinaryFormatter();
 			using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
 			{
@@ -196,6 +202,12 @@ namespace HomeWork3
 
 		static void SaveXml(string fileName, object obj)
 		{
+			FileInfo fi = new FileInfo(fileName);
+			if (fi.Exists)
+			{
+				fi.Delete();
+			}
+
 			XmlSerializer xs = new XmlSerializer(typeof(List<Employee>));
 			using (FileStream fs = new FileStream(fileName, FileMode.OpenOrCreate))
 			{
