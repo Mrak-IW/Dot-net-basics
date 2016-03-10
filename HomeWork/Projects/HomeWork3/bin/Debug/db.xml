@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<ArrayOfEmployee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Employee>
+    <ID>0</ID>
+    <Name>Угон</Name>
+    <Surname>Камазов</Surname>
+    <Position>Сторож</Position>
+  </Employee>
+  <Employee>
+    <ID>1</ID>
+    <Name>Рулон</Name>
+    <Surname>Обоев</Surname>
+    <Position>Космонавт</Position>
+  </Employee>
+  <Employee>
+    <ID>2</ID>
+    <Name>Бидон</Name>
+    <Surname>Помоев</Surname>
+    <Position>Ловец зелёных зайцев</Position>
+  </Employee>
+  <Employee>
+    <ID>3</ID>
+    <Name>XML</Name>
+    <Surname>Serializer</Surname>
+    <Position>Менеджер_по_сериализации</Position>
+  </Employee>
+</ArrayOfEmployee>
