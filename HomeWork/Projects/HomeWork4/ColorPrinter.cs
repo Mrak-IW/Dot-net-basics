@@ -77,7 +77,6 @@ namespace HomeWork4
 			List<ColorString> result = new List<ColorString>();
 			ConsoleColor defaultColor = Console.ForegroundColor;
 			ConsoleColor color;
-			string value;
 
 			foreach (PropertyInfo p in pi)
 			{
