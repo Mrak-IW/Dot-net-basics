@@ -63,7 +63,7 @@ namespace HomeWork4
 			}
 			result.Add(new ColorString { color = defaultColor, str = string.Format("{0}{1}\n{2}", mods, type.Name, "{") });
 			buf = DescribeProperties(obj);
-			result.Add(new ColorString { color = defaultColor, str = "\t//Свойства" });
+			result.Add(new ColorString { color = ConsoleColor.DarkGreen, str = "\t//Свойства" });
 			result.AddRange(buf);
 
 			result.Add(new ColorString { color = defaultColor, str = "}" });
