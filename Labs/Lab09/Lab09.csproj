@@ -1,16 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5E1CDB4E-FF98-4C35-9A58-F884BA8805BC}</ProjectGuid>
+    <ProjectGuid>{9A15E484-75A0-4627-9B90-81D5634D479A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lab12</RootNamespace>
-    <AssemblyName>Lab12</AssemblyName>
+    <RootNamespace>Lab9</RootNamespace>
+    <AssemblyName>Lab9</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,10 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Lab11, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f6feefca127778e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Assemblies\Lab11.exe</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,9 +43,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Task6\Menu.cs" />
+    <Compile Include="Task6\Account.cs" />
+    <Compile Include="Task6\CardAccount.cs" />
+    <Compile Include="Task6\CurrentAccount.cs" />
+    <Compile Include="Task6\DepositAccount.cs" />
+    <Compile Include="Task6\IDepositAcc.cs" />
+    <Compile Include="Task6\IHaveFreeAccess.cs" />
+    <Compile Include="Task1\EElectricDeviceState.cs" />
+    <Compile Include="Task1\ElectricDevice.cs" />
+    <Compile Include="Task1\Fridge.cs" />
+    <Compile Include="Task1\ISwitchable.cs" />
+    <Compile Include="Task2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task1.cs" />
+    <Compile Include="Task3.cs" />
+    <Compile Include="Task1\TvSet.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Task6\Task6.cd" />
+    <None Include="Task1\Task1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
